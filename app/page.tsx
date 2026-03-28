@@ -13,9 +13,9 @@ export default function Home() {
       {/* HERO */}
       <section className="h-[80vh] md:h-screen bg-cover bg-center flex items-center justify-center relative pt-16" style={{backgroundImage: "url('/images/Hero.jpg')"}}>
         <div className="absolute inset-0 bg-black/25"></div>
-        <div className="relative z-10 text-center text-white max-w-2xl px-6">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6">Luxury Made Simple</h1>
-          <p className="text-lg md:text-2xl font-light mb-3 md:mb-4">Yacht Charters & Concierge Services</p>
+        <div className="relative z-10 text-center text-white max-w-2xl px-6" style={{ animation: "var(--animate-fade-in)" }}>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6" style={{ animation: "var(--animate-slide-up)" }}>Luxury Made Simple</h1>
+          <p className="text-lg md:text-2xl font-light mb-3 md:mb-4" style={{ animation: "var(--animate-slide-up-delay)" }}>Yacht Charters & Concierge Services</p>
           <p className="text-sm md:text-lg font-light mb-8 md:mb-10 text-white/80">Mallorca · Ibiza · Mediterranean</p>
           <a href="https://wa.me/4915738248355" className="bg-white text-black px-8 md:px-14 py-4 md:py-5 font-bold rounded text-base md:text-lg hover:bg-gray-100 hover:scale-105 transition-transform inline-block shadow-lg">BOOK NOW</a>
         </div>

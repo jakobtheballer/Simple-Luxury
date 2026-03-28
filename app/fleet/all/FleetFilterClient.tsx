@@ -21,6 +21,7 @@ export default function FleetFilterClient({ yachts }: { yachts: Yacht[] }) {
   const [boatType, setBoatType] = useState<BoatType | "All">("All");
   const [maxPrice, setMaxPrice] = useState<number>(MAX_PRICE);
   const [sort, setSort]         = useState<"price-asc" | "price-desc" | "name">("price-asc");
+  const [filtersOpen, setFiltersOpen] = useState(false);
 
   const allTypes = useMemo(
     () => Array.from(new Set(yachts.map((y) => y.boatType))) as BoatType[],
@@ -56,7 +57,17 @@ export default function FleetFilterClient({ yachts }: { yachts: Yacht[] }) {
   return (
     <>
       {/* FILTER BAR */}
-      <div className="sticky top-16 z-30 text-white shadow-lg" style={{ backgroundColor: "#0D1F2D" }}>
+      <div className="lg:sticky top-16 z-30 text-white shadow-lg" style={{ backgroundColor: "#0D1F2D" }}>
+        {/* Mobile toggle */}
+        <button
+          onClick={() => setFiltersOpen(!filtersOpen)}
+          className="lg:hidden w-full px-4 py-3 flex items-center justify-between text-sm font-bold"
+        >
+          <span>Filters {hasActiveFilter && <span className="text-[#FFD700]">·</span>}</span>
+          <span className="text-white/60 text-xs">{filtersOpen ? "▲ Hide" : "▼ Show"}</span>
+        </button>
+
+        <div className={`lg:block overflow-hidden transition-all duration-300 ${filtersOpen ? "max-h-[400px]" : "max-h-0 lg:max-h-none"}`}>
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex flex-wrap gap-3 md:gap-4 items-end">
 
           {/* Location */}
@@ -146,6 +157,7 @@ export default function FleetFilterClient({ yachts }: { yachts: Yacht[] }) {
               ✕ Reset
             </button>
           )}
+        </div>
         </div>
       </div>
 
