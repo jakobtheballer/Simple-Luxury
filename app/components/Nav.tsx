@@ -8,7 +8,35 @@ export default function Nav() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-40 bg-[#0D1F2D]/90 backdrop-blur-sm text-white">
       <div className="max-w-7xl mx-auto px-5 h-16 flex items-center justify-between">
-        <a href="/" className="text-lg font-bold tracking-wide">SIMPLE LUXURY</a>
+        <a href="/" className="flex items-center gap-3 group">
+          {/* Yacht SVG Icon */}
+          <svg
+            viewBox="0 0 40 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-8 h-8 shrink-0 group-hover:scale-110 transition-transform duration-300"
+          >
+            {/* Hull */}
+            <path d="M4 26 Q20 30 36 26 L33 31 Q20 34 7 31 Z" fill="#FFD700" />
+            {/* Mast */}
+            <line x1="20" y1="26" x2="20" y2="8" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+            {/* Main sail */}
+            <path d="M20 10 L20 25 L7 24 Z" fill="white" opacity="0.9"/>
+            {/* Jib */}
+            <path d="M20 13 L20 25 L31 23 Z" fill="white" opacity="0.5"/>
+            {/* Wave lines */}
+            <path d="M2 33 Q8 31 14 33 Q20 35 26 33 Q32 31 38 33" stroke="white" strokeWidth="1" strokeLinecap="round" opacity="0.4"/>
+          </svg>
+          {/* Text */}
+          <div className="leading-none">
+            <p className="text-base font-bold tracking-[0.18em] text-white group-hover:text-[#FFD700] transition-colors duration-300">
+              SIMPLE LUXURY
+            </p>
+            <p className="text-[8px] tracking-[0.25em] text-white/40 uppercase mt-0.5 hidden sm:block">
+              Mediterranean · Experiences
+            </p>
+          </div>
+        </a>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-6 text-sm font-medium">
