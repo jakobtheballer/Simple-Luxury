@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { fleet, getYacht } from "@/lib/fleet";
 import GalleryClient from "./GalleryClient";
@@ -53,129 +52,106 @@ export default async function YachtDetailPage({ params }: Props) {
         }}
       />
 
-      {/* HERO IMAGE */}
-      <section className="relative h-[70vh] w-full bg-gray-900 overflow-hidden">
-        <Image
-          src={yacht.image}
-          alt={`${yacht.name} – Yacht Charter ${yacht.location}`}
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0D1F2D]/80 via-[#0D1F2D]/20 to-transparent" />
+      {/* FULL-WIDTH IMAGE CAROUSEL */}
+      <GalleryClient images={yacht.images} name={yacht.name} />
 
-        {/* Back */}
-        <a href="/fleet" className="absolute top-8 left-8 text-white/80 hover:text-white text-sm font-medium z-10 flex items-center gap-2">
-          ← All Yachts
-        </a>
-
-        {/* Title overlay */}
-        <div className="absolute bottom-10 left-10 right-10 z-10 text-white">
-          <p className="text-xs uppercase tracking-[0.3em] text-white/60 mb-3">{yacht.type} · {yacht.location}</p>
+      {/* TITLE SECTION */}
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-6 md:py-8 flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <a href="/fleet" className="text-gray-400 hover:text-gray-600 text-sm font-medium flex items-center gap-1.5 mb-3">
+            ← All Yachts
+          </a>
+          <p className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-2">{yacht.type} · {yacht.location}</p>
           {yacht.brand === "Hütter" ? (
-            <>
-              <div className="flex flex-wrap items-center gap-4 mb-2">
-                <h1 className="text-5xl md:text-6xl font-bold">Hütter Yachts</h1>
-                <span className="bg-[#FFD700] text-[#0D1F2D] px-4 py-1.5 rounded text-xs font-bold uppercase tracking-wider shrink-0">
+            <div>
+              <div className="flex flex-wrap items-center gap-3 mb-1">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold" style={{ color: "#0D1F2D" }}>
+                  {yacht.name}
+                </h1>
+                <span className="bg-[#FFD700] text-[#0D1F2D] px-3 py-1 rounded text-xs font-bold uppercase tracking-wider shrink-0">
                   ✦ Exclusive Partner
                 </span>
               </div>
-              <p className="text-xl font-light text-white/80">{yacht.name} · {yacht.shortDescription}</p>
-            </>
+              <p className="text-gray-500 text-base md:text-lg">{yacht.shortDescription}</p>
+            </div>
           ) : (
-            <>
-              <h1 className="text-5xl md:text-6xl font-bold mb-2">{yacht.name}</h1>
-              <p className="text-xl font-light text-white/80">{yacht.shortDescription}</p>
-            </>
+            <div>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-1" style={{ color: "#0D1F2D" }}>{yacht.name}</h1>
+              <p className="text-gray-500 text-base md:text-lg">{yacht.shortDescription}</p>
+            </div>
           )}
         </div>
-
-        {/* Price badge */}
-        <div className="absolute bottom-10 right-10 z-10 text-right text-white">
-          <p className="text-xs text-white/60 mb-1">From</p>
-          <p className="text-4xl font-bold">{lowestPrice}</p>
-          <p className="text-sm text-white/70">/day · VAT included</p>
+        <div className="text-right">
+          <p className="text-xs text-gray-400 uppercase tracking-widest mb-1">Charter From</p>
+          <p className="text-3xl md:text-4xl font-bold" style={{ color: "#0D1F2D" }}>{lowestPrice}</p>
+          <p className="text-xs text-gray-400 mt-1">per day · VAT included</p>
         </div>
-      </section>
+      </div>
 
-      {/* HOUSE OF HÜTTER BRANDING STRIP — nur bei Hütter Booten */}
+      {/* HOUSE OF HÜTTER BRANDING STRIP */}
       {yacht.brand === "Hütter" && (
-        <div className="border-b border-gray-100 bg-white">
-          <div className="max-w-7xl mx-auto px-8 py-5 flex flex-wrap items-center justify-between gap-4">
-            <div className="flex items-center gap-5">
+        <div className="border-y border-gray-100 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 md:px-8 py-4 flex flex-wrap items-center justify-between gap-4">
+            <div className="flex items-center gap-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/hutter-logo.svg"
-                alt="House of Hütter"
-                className="h-10 w-auto"
-              />
+              <img src="/hutter-logo.svg" alt="House of Hütter" className="h-9 w-auto" />
               <div>
                 <p className="text-[10px] uppercase tracking-[0.3em] text-gray-400">Exclusive Partner</p>
                 <p className="text-sm font-bold" style={{ color: "#6b3f2a" }}>House of Hütter</p>
               </div>
             </div>
-            <div className="flex items-center gap-3">
-              <span className="text-xs text-gray-400 uppercase tracking-wider">Part of the</span>
-              <span
-                className="text-xs font-bold px-3 py-1.5 rounded-full text-white"
-                style={{ backgroundColor: "#e46a22" }}
-              >
-                Hütter GT Fleet
-              </span>
-            </div>
+            <span className="text-xs font-bold px-3 py-1.5 rounded-full text-white" style={{ backgroundColor: "#e46a22" }}>
+              Hütter GT Fleet
+            </span>
           </div>
         </div>
       )}
 
-      <div className="max-w-7xl mx-auto px-8 py-16 grid grid-cols-1 lg:grid-cols-3 gap-14">
+      {/* MAIN CONTENT */}
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-16 grid grid-cols-1 lg:grid-cols-3 gap-10 md:gap-14">
 
         {/* LEFT: Main content */}
-        <div className="lg:col-span-2 space-y-14">
+        <div className="lg:col-span-2 space-y-10 md:space-y-14">
 
-          {/* Description */}
+          {/* Quick Specs */}
           <section>
-            <h2 className="text-3xl font-bold mb-6" style={{ color: "#0D1F2D" }}>About This Yacht</h2>
-            <p className="text-gray-700 leading-relaxed text-lg">{yacht.description}</p>
-          </section>
-
-          {/* Gallery */}
-          <GalleryClient images={yacht.images} name={yacht.name} />
-
-          {/* Specs */}
-          <section>
-            <h2 className="text-3xl font-bold mb-6" style={{ color: "#0D1F2D" }}>Specifications</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {yacht.specs.map(({ label, value }) => (
-                <div key={label} className="rounded-xl p-5 border border-gray-200 text-center">
-                  <p className="text-[10px] uppercase tracking-widest text-gray-400 mb-2">{label}</p>
-                  <p className="font-bold text-gray-900">{value}</p>
+                <div key={label} className="rounded-xl p-4 md:p-5 border border-gray-200 text-center">
+                  <p className="text-[10px] uppercase tracking-widest text-gray-400 mb-1.5">{label}</p>
+                  <p className="font-bold text-gray-900 text-sm md:text-base">{value}</p>
                 </div>
               ))}
             </div>
           </section>
 
+          {/* Description */}
+          <section>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6" style={{ color: "#0D1F2D" }}>About This Yacht</h2>
+            <p className="text-gray-700 leading-relaxed text-base md:text-lg">{yacht.description}</p>
+          </section>
+
           {/* Features */}
           <section>
-            <h2 className="text-3xl font-bold mb-6" style={{ color: "#0D1F2D" }}>Features & Amenities</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6" style={{ color: "#0D1F2D" }}>Features & Amenities</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
               {yacht.features.map((f) => (
                 <div key={f} className="flex items-center gap-3 bg-gray-50 rounded-xl px-4 py-3">
-                  <span style={{ color: "#25D366" }} className="text-lg">✓</span>
+                  <span style={{ color: "#25D366" }} className="text-lg flex-shrink-0">✓</span>
                   <span className="text-gray-800 text-sm font-medium">{f}</span>
                 </div>
               ))}
             </div>
           </section>
 
-          {/* Water Toys — nur wenn vorhanden */}
+          {/* Water Toys */}
           {yacht.waterToys && yacht.waterToys.length > 0 && (
             <section>
-              <h2 className="text-3xl font-bold mb-6" style={{ color: "#0D1F2D" }}>Water Toys</h2>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6" style={{ color: "#0D1F2D" }}>Water Toys</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                 {yacht.waterToys.map((toy) => (
                   <div key={toy} className="flex items-center gap-3 bg-blue-50 rounded-xl px-4 py-3">
-                    <span className="text-blue-500 text-lg">🌊</span>
+                    <span className="text-blue-500 text-lg flex-shrink-0">🌊</span>
                     <span className="text-gray-800 text-sm font-medium">{toy}</span>
                   </div>
                 ))}
@@ -185,8 +161,8 @@ export default async function YachtDetailPage({ params }: Props) {
 
           {/* Pricing Table */}
           <section>
-            <h2 className="text-3xl font-bold mb-6" style={{ color: "#0D1F2D" }}>Pricing</h2>
-            <p className="text-gray-500 text-sm mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold mb-2 md:mb-3" style={{ color: "#0D1F2D" }}>Pricing</h2>
+            <p className="text-gray-500 text-sm mb-4 md:mb-6">
               {yacht.charterType === "week"
                 ? "Week charter prices · VAT (21%) & APA (35%) not included"
                 : "All prices per day · VAT (21%) included"}
@@ -195,17 +171,17 @@ export default async function YachtDetailPage({ params }: Props) {
               <table className="w-full">
                 <thead>
                   <tr style={{ backgroundColor: "#0D1F2D" }}>
-                    <th className="text-left text-white text-sm uppercase tracking-wider px-6 py-4">Season</th>
-                    <th className="text-left text-white text-sm uppercase tracking-wider px-6 py-4">Period</th>
-                    <th className="text-right text-white text-sm uppercase tracking-wider px-6 py-4">Price / Day</th>
+                    <th className="text-left text-white text-xs uppercase tracking-wider px-4 md:px-6 py-3 md:py-4">Season</th>
+                    <th className="text-left text-white text-xs uppercase tracking-wider px-4 md:px-6 py-3 md:py-4">Period</th>
+                    <th className="text-right text-white text-xs uppercase tracking-wider px-4 md:px-6 py-3 md:py-4">Price / Day</th>
                   </tr>
                 </thead>
                 <tbody>
                   {yacht.pricing.map((row, i) => (
                     <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                      <td className="px-6 py-4 font-medium text-gray-800">{row.season}</td>
-                      <td className="px-6 py-4 text-gray-600">{row.months}</td>
-                      <td className="px-6 py-4 text-right font-bold text-xl" style={{ color: "#0D1F2D" }}>{row.price}</td>
+                      <td className="px-4 md:px-6 py-3 md:py-4 font-medium text-gray-800 text-sm">{row.season}</td>
+                      <td className="px-4 md:px-6 py-3 md:py-4 text-gray-600 text-sm">{row.months}</td>
+                      <td className="px-4 md:px-6 py-3 md:py-4 text-right font-bold text-base md:text-xl" style={{ color: "#0D1F2D" }}>{row.price}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -215,38 +191,49 @@ export default async function YachtDetailPage({ params }: Props) {
 
           {/* Included / Not Included */}
           <section>
-            <h2 className="text-3xl font-bold mb-6" style={{ color: "#0D1F2D" }}>What&apos;s Included</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="bg-green-50 rounded-2xl p-6 border border-green-100">
-                <h3 className="font-bold text-green-800 mb-4 flex items-center gap-2">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6" style={{ color: "#0D1F2D" }}>What&apos;s Included</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+              <div className="bg-green-50 rounded-2xl p-5 md:p-6 border border-green-100">
+                <h3 className="font-bold text-green-800 mb-3 md:mb-4 flex items-center gap-2">
                   <span>✓</span> Included
                 </h3>
-                <ul className="space-y-3">
+                <ul className="space-y-2 md:space-y-3">
                   {yacht.included.map((item) => (
                     <li key={item} className="flex items-center gap-3 text-green-900 text-sm">
-                      <span className="text-green-500 font-bold">✓</span> {item}
+                      <span className="text-green-500 font-bold flex-shrink-0">✓</span> {item}
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
-                <h3 className="font-bold text-gray-700 mb-4 flex items-center gap-2">
+              <div className="bg-gray-50 rounded-2xl p-5 md:p-6 border border-gray-200">
+                <h3 className="font-bold text-gray-700 mb-3 md:mb-4 flex items-center gap-2">
                   <span>+</span> Not Included
                 </h3>
-                <ul className="space-y-3">
+                <ul className="space-y-2 md:space-y-3">
                   {yacht.notIncluded.map((item) => (
                     <li key={item} className="flex items-center gap-3 text-gray-600 text-sm">
-                      <span className="text-gray-400">+</span> {item}
+                      <span className="text-gray-400 flex-shrink-0">+</span> {item}
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
           </section>
+
+          {/* Mobile CTA */}
+          <div className="lg:hidden">
+            <a
+              href={`https://wa.me/4915738248355?text=Hi%2C%20I%27d%20like%20to%20charter%20${encodeURIComponent(yacht.name)}.`}
+              className="block w-full text-center text-white font-bold py-4 rounded-xl text-lg hover:opacity-90 transition shadow"
+              style={{ backgroundColor: "#25D366" }}
+            >
+              BOOK NOW via WhatsApp
+            </a>
+          </div>
         </div>
 
         {/* RIGHT: Sticky booking card */}
-        <div className="lg:col-span-1">
+        <div className="hidden lg:block lg:col-span-1">
           <div className="sticky top-24 rounded-2xl border border-gray-200 shadow-xl overflow-hidden">
             <div className="p-6 text-white" style={{ backgroundColor: "#0D1F2D" }}>
               <p className="text-white/60 text-xs uppercase tracking-widest mb-1">Charter From</p>
@@ -255,7 +242,6 @@ export default async function YachtDetailPage({ params }: Props) {
             </div>
 
             <div className="p-6 space-y-4 bg-white">
-              {/* Quick specs */}
               <div className="space-y-3 pb-4 border-b border-gray-100">
                 {[
                   { label: "Location", value: yacht.location },
@@ -286,7 +272,6 @@ export default async function YachtDetailPage({ params }: Props) {
                 Ask a Question
               </a>
 
-              {/* House of Hütter branding — nur bei Hütter Booten */}
               {yacht.brand === "Hütter" && (
                 <div className="pt-3 border-t border-gray-100 flex items-center gap-3">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -297,7 +282,6 @@ export default async function YachtDetailPage({ params }: Props) {
                   </div>
                 </div>
               )}
-
             </div>
           </div>
         </div>
