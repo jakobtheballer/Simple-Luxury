@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
+import Nav from "./components/Nav";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,45 +24,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col" style={{ fontFamily: "var(--font-geist-sans)" }}>
 
         {/* NAVIGATION */}
-        <nav className="fixed top-0 left-0 right-0 z-40 bg-[#0D1F2D]/90 backdrop-blur-sm text-white">
-          <div className="max-w-7xl mx-auto px-8 h-16 flex items-center justify-between">
-            <a href="/" className="text-xl font-bold tracking-wide">SIMPLE LUXURY</a>
-            <div className="hidden md:flex items-center gap-7 text-sm font-medium">
-              <a href="/fleet" className="hover:text-[#25D366] transition-colors flex items-center gap-1.5">
-                Hütter Yachts
-                <span className="bg-[#FFD700] text-[#0D1F2D] text-[8px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wide leading-none">Partner</span>
-              </a>
-              {/* Yachts dropdown */}
-              <div className="relative group">
-                <button className="hover:text-[#25D366] transition-colors flex items-center gap-1">
-                  Yachts <span className="text-[10px] text-white/50 group-hover:text-[#25D366]">▾</span>
-                </button>
-                <div className="absolute top-full left-0 mt-2 w-48 bg-[#0D1F2D] border border-white/10 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                  <a href="/fleet" className="block px-4 py-3 text-sm hover:text-[#25D366] hover:bg-white/5 transition-colors border-b border-white/10">
-                    Hütter Yachts
-                    <span className="block text-[10px] text-white/40 mt-0.5">Dr. No · Moneypenny · Goldfinger</span>
-                  </a>
-                  <a href="/fleet/all" className="block px-4 py-3 text-sm hover:text-[#25D366] hover:bg-white/5 transition-colors">
-                    Our Luxury Fleet
-                    <span className="block text-[10px] text-white/40 mt-0.5">All available yachts</span>
-                  </a>
-                </div>
-              </div>
-              <a href="/villas" className="hover:text-[#25D366] transition-colors">Villas</a>
-              <a href="/services" className="hover:text-[#25D366] transition-colors">Services</a>
-              <a
-                href="https://wa.me/4915738248355"
-                className="bg-[#25D366] text-white px-5 py-2 rounded font-bold hover:bg-green-500 transition-colors"
-              >
-                Book Now
-              </a>
-            </div>
-            {/* Mobile menu */}
-            <a href="https://wa.me/4915738248355" className="md:hidden bg-[#25D366] text-white px-4 py-2 rounded font-bold text-sm">
-              Book
-            </a>
-          </div>
-        </nav>
+        <Nav />
 
         {/* PAGE CONTENT */}
         <div className="flex-1">

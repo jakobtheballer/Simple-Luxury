@@ -39,14 +39,14 @@ export default function ServicesPage() {
 
       {/* HERO */}
       <section
-        className="relative h-[50vh] flex items-end justify-start bg-cover bg-center overflow-hidden"
+        className="relative h-[40vh] md:h-[50vh] flex items-end justify-start bg-cover bg-center overflow-hidden"
         style={{ backgroundImage: "url('/images/Hero.jpg')" }}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-[#0D1F2D]/85 via-[#0D1F2D]/20 to-transparent" />
-        <div className="relative z-10 px-10 pb-10 text-white">
-          <p className="text-xs uppercase tracking-[0.3em] text-white/50 mb-3">Mallorca · Ibiza · Mediterranean</p>
-          <h1 className="text-5xl font-bold mb-2">Luxury Experiences</h1>
-          <p className="text-lg font-light text-white/70">Tailored to your desires. Crafted for perfection.</p>
+        <div className="relative z-10 px-6 md:px-10 pb-8 md:pb-10 text-white">
+          <p className="text-xs uppercase tracking-[0.3em] text-white/50 mb-2 md:mb-3">Mallorca · Ibiza · Mediterranean</p>
+          <h1 className="text-3xl md:text-5xl font-bold mb-2">Luxury Experiences</h1>
+          <p className="text-sm md:text-lg font-light text-white/70">Tailored to your desires. Crafted for perfection.</p>
         </div>
         <a
           href="#services"
@@ -57,11 +57,11 @@ export default function ServicesPage() {
       </section>
 
       {/* FEATURED */}
-      <section className="py-16 px-8">
+      <section className="py-10 md:py-16 px-4 md:px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
-          <div className="p-10 lg:p-14">
+          <div className="p-6 md:p-10 lg:p-14">
             <span className="text-xs uppercase tracking-[0.3em] text-gray-400">Featured Service</span>
-            <h2 className="text-4xl font-bold mt-3 mb-5" style={{ color: "#0D1F2D" }}>Luxury Yacht Charters</h2>
+            <h2 className="text-2xl md:text-4xl font-bold mt-3 mb-4 md:mb-5" style={{ color: "#0D1F2D" }}>Luxury Yacht Charters</h2>
             <p className="text-gray-600 leading-relaxed mb-8">
               Experience the Mediterranean in ultimate style. From intimate half-day cruises to week-long expeditions — our fleet of premium yachts is crewed by professionals dedicated to your comfort and pleasure.
             </p>

@@ -46,14 +46,14 @@ export default function Testimonials() {
   const t = testimonials[idx];
 
   return (
-    <section className="py-20 px-8" style={{ backgroundColor: "#F8F8F6" }}>
+    <section className="py-12 md:py-20 px-4 md:px-8" style={{ backgroundColor: "#F8F8F6" }}>
       <div className="max-w-3xl mx-auto">
         <p className="text-center text-xs uppercase tracking-[0.3em] text-gray-400 mb-3">Customer Stories</p>
-        <h2 className="text-4xl font-bold text-center mb-12" style={{ color: "#0D1F2D" }}>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12" style={{ color: "#0D1F2D" }}>
           What Our Guests Say
         </h2>
 
-        <div className="bg-white rounded-2xl p-10 shadow-sm border border-gray-100">
+        <div className="bg-white rounded-2xl p-6 md:p-10 shadow-sm border border-gray-100">
           {/* Stars */}
           <div className="flex justify-center gap-1 mb-6">
             {Array.from({ length: t.rating }).map((_, i) => (
@@ -62,7 +62,7 @@ export default function Testimonials() {
           </div>
 
           {/* Quote */}
-          <p className="text-lg text-gray-700 text-center italic leading-relaxed mb-8">
+          <p className="text-sm md:text-lg text-gray-700 text-center italic leading-relaxed mb-6 md:mb-8">
             &ldquo;{t.text}&rdquo;
           </p>
 

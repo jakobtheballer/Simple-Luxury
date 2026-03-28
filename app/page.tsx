@@ -11,21 +11,21 @@ export default function Home() {
   return (
     <main className="bg-white">
       {/* HERO */}
-      <section className="h-screen bg-cover bg-center flex items-center justify-center relative pt-16" style={{backgroundImage: "url('/images/Hero.jpg')"}}>
+      <section className="h-[80vh] md:h-screen bg-cover bg-center flex items-center justify-center relative pt-16" style={{backgroundImage: "url('/images/Hero.jpg')"}}>
         <div className="absolute inset-0 bg-black/25"></div>
         <div className="relative z-10 text-center text-white max-w-2xl px-6">
-          <h1 className="text-7xl font-bold mb-6">Luxury Made Simple</h1>
-          <p className="text-2xl font-light mb-4">Yacht Charters & Concierge Services</p>
-          <p className="text-lg font-light mb-10 text-white/80">Mallorca · Ibiza · Mediterranean</p>
-          <a href="https://wa.me/4915738248355" className="bg-white text-black px-14 py-5 font-bold rounded text-lg hover:bg-gray-100 hover:scale-105 transition-transform inline-block shadow-lg">BOOK NOW</a>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6">Luxury Made Simple</h1>
+          <p className="text-lg md:text-2xl font-light mb-3 md:mb-4">Yacht Charters & Concierge Services</p>
+          <p className="text-sm md:text-lg font-light mb-8 md:mb-10 text-white/80">Mallorca · Ibiza · Mediterranean</p>
+          <a href="https://wa.me/4915738248355" className="bg-white text-black px-8 md:px-14 py-4 md:py-5 font-bold rounded text-base md:text-lg hover:bg-gray-100 hover:scale-105 transition-transform inline-block shadow-lg">BOOK NOW</a>
         </div>
       </section>
 
       {/* SERVICES */}
-      <section className="py-24 px-8 bg-gray-50">
+      <section className="py-12 md:py-24 px-4 md:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl font-bold text-center mb-4">Our Services</h2>
-          <p className="text-center text-gray-600 mb-16 text-lg">Everything for your Mediterranean experience</p>
+          <h2 className="text-3xl md:text-5xl font-bold text-center mb-3 md:mb-4">Our Services</h2>
+          <p className="text-center text-gray-600 mb-10 md:mb-16 text-base md:text-lg">Everything for your Mediterranean experience</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             <a href="/yachts" className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition block">
               <div className="relative h-56 w-full bg-gray-100">
@@ -59,9 +59,9 @@ export default function Home() {
       </section>
 
       {/* FLEET TEASER */}
-      <section className="py-24 px-8 max-w-7xl mx-auto">
-        <h2 className="text-5xl font-bold text-center mb-4">Hütter Yachts</h2>
-        <p className="text-center text-gray-600 mb-16 text-lg">Dr. No | Moneypenny | Goldfinger</p>
+      <section className="py-12 md:py-24 px-4 md:px-8 max-w-7xl mx-auto">
+        <h2 className="text-3xl md:text-5xl font-bold text-center mb-3 md:mb-4">Hütter Yachts</h2>
+        <p className="text-center text-gray-600 mb-10 md:mb-16 text-base md:text-lg">Dr. No | Moneypenny | Goldfinger</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             { name: "Dr. No", sub: "55ft Luxury Catamaran", img: "/images/Hero.jpg", price: "€5,000/night" },
@@ -86,19 +86,19 @@ export default function Home() {
       </section>
 
       {/* STATS */}
-      <section className="py-28 px-8 text-white" style={{ backgroundColor: "#0D1F2D" }}>
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+      <section className="py-16 md:py-28 px-4 md:px-8 text-white" style={{ backgroundColor: "#0D1F2D" }}>
+        <div className="max-w-7xl mx-auto grid grid-cols-3 gap-6 md:gap-12 text-center">
           <div>
-            <h3 className="text-5xl font-bold mb-3">500+</h3>
-            <p className="text-xl text-white/70">Happy Clients</p>
+            <h3 className="text-3xl md:text-5xl font-bold mb-2 md:mb-3">500+</h3>
+            <p className="text-sm md:text-xl text-white/70">Happy Clients</p>
           </div>
           <div>
-            <h3 className="text-5xl font-bold mb-3">24/7</h3>
-            <p className="text-xl text-white/70">Available</p>
+            <h3 className="text-3xl md:text-5xl font-bold mb-2 md:mb-3">24/7</h3>
+            <p className="text-sm md:text-xl text-white/70">Available</p>
           </div>
           <div>
-            <h3 className="text-5xl font-bold mb-3">100%</h3>
-            <p className="text-xl text-white/70">Quality</p>
+            <h3 className="text-3xl md:text-5xl font-bold mb-2 md:mb-3">100%</h3>
+            <p className="text-sm md:text-xl text-white/70">Quality</p>
           </div>
         </div>
       </section>
@@ -107,10 +107,10 @@ export default function Home() {
       <Testimonials />
 
       {/* CTA */}
-      <section className="py-28 px-8 text-center max-w-3xl mx-auto">
-        <h2 className="text-5xl font-bold mb-6">Ready?</h2>
-        <p className="text-xl text-gray-600 mb-10">Let&apos;s create your perfect Mediterranean Sailing experience.</p>
-        <a href="https://wa.me/4915738248355" className="text-white px-14 py-5 font-bold rounded text-lg hover:opacity-90 hover:scale-105 transition-transform inline-block shadow-lg" style={{ backgroundColor: "#0D1F2D" }}>GET IN TOUCH</a>
+      <section className="py-16 md:py-28 px-4 md:px-8 text-center max-w-3xl mx-auto">
+        <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6">Ready?</h2>
+        <p className="text-base md:text-xl text-gray-600 mb-8 md:mb-10">Let&apos;s create your perfect Mediterranean Sailing experience.</p>
+        <a href="https://wa.me/4915738248355" className="text-white px-8 md:px-14 py-4 md:py-5 font-bold rounded text-base md:text-lg hover:opacity-90 hover:scale-105 transition-transform inline-block shadow-lg" style={{ backgroundColor: "#0D1F2D" }}>GET IN TOUCH</a>
       </section>
     </main>
   );

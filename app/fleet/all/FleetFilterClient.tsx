@@ -57,7 +57,7 @@ export default function FleetFilterClient({ yachts }: { yachts: Yacht[] }) {
     <>
       {/* FILTER BAR */}
       <div className="sticky top-16 z-30 text-white shadow-lg" style={{ backgroundColor: "#0D1F2D" }}>
-        <div className="max-w-7xl mx-auto px-6 py-4 flex flex-wrap gap-4 items-end">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex flex-wrap gap-3 md:gap-4 items-end">
 
           {/* Location */}
           <div>
@@ -158,7 +158,7 @@ export default function FleetFilterClient({ yachts }: { yachts: Yacht[] }) {
       </div>
 
       {/* GRID */}
-      <section className="pb-20 px-6 max-w-7xl mx-auto">
+      <section className="pb-12 md:pb-20 px-4 md:px-6 max-w-7xl mx-auto">
         {filtered.length === 0 ? (
           <div className="text-center py-24">
             <p className="text-6xl mb-4">⚓</p>
