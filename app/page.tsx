@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Testimonials from "./components/Testimonials";
+import { fleet } from "@/lib/fleet";
 
 export const metadata: Metadata = {
   title: "Luxury Yacht Charter Mallorca Ibiza | Simple Luxury Services",
@@ -61,21 +62,17 @@ export default function Home() {
       {/* FLEET TEASER */}
       <section className="py-12 md:py-24 px-4 md:px-8 max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-5xl font-bold text-center mb-3 md:mb-4">Hütter Yachts</h2>
-        <p className="text-center text-gray-600 mb-10 md:mb-16 text-base md:text-lg">Dr. No | Moneypenny | Goldfinger</p>
+        <p className="text-center text-gray-600 mb-10 md:mb-16 text-base md:text-lg">Dr. No · Moneypenny · Goldfinger</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            { name: "Dr. No", sub: "55ft Luxury Catamaran", img: "/images/Hero.jpg", price: "€5,000/night" },
-            { name: "Moneypenny", sub: "42ft Sport Yacht", img: "/images/moneypenny.jpg", price: "€3,500/night" },
-            { name: "Goldfinger", sub: "65ft Motor Yacht", img: "/images/goldfinger.jpg", price: "€6,500/night" },
-          ].map((boat) => (
-            <a key={boat.name} href="/fleet" className="group border border-gray-200 rounded-xl overflow-hidden hover:shadow-2xl transition block">
+          {fleet.filter((y) => y.brand === "Hütter").map((yacht) => (
+            <a key={yacht.id} href={`/fleet/${yacht.id}`} className="group border border-gray-200 rounded-xl overflow-hidden hover:shadow-2xl transition block">
               <div className="relative h-56 w-full bg-gray-100">
-                <Image src={boat.img} alt={boat.name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                <Image src={yacht.image} alt={yacht.name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 768px) 100vw, 33vw" />
               </div>
               <div className="p-6">
-                <h3 className="text-2xl font-bold mb-1">{boat.name}</h3>
-                <p className="text-gray-500 text-sm mb-3">{boat.sub}</p>
-                <p className="text-xl font-bold text-[#0D1F2D]">{boat.price}</p>
+                <h3 className="text-2xl font-bold mb-1">{yacht.name}</h3>
+                <p className="text-gray-500 text-sm mb-3">{yacht.shortDescription}</p>
+                <p className="text-xl font-bold text-[#0D1F2D]">{yacht.displayPrice}</p>
               </div>
             </a>
           ))}
