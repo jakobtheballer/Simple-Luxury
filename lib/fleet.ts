@@ -58,15 +58,15 @@ export const fleet: Yacht[] = [
     image: "/images/hutter/dr-no/dr-no-hero.jpg",
     images: [
       "/images/hutter/dr-no/dr-no-hero.jpg",
-      "/images/hutter/dr-no/dr-no-7.jpg",
-      "/images/hutter/dr-no/dr-no-8.jpg",
-      "/images/hutter/dr-no/dr-no-9.jpg",
       "/images/hutter/dr-no/dr-no-1.jpg",
       "/images/hutter/dr-no/dr-no-2.jpg",
       "/images/hutter/dr-no/dr-no-3.jpg",
       "/images/hutter/dr-no/dr-no-4.jpg",
       "/images/hutter/dr-no/dr-no-5.jpg",
       "/images/hutter/dr-no/dr-no-6.jpg",
+      "/images/hutter/dr-no/dr-no-7.jpg",
+      "/images/hutter/dr-no/dr-no-8.jpg",
+      "/images/hutter/dr-no/dr-no-9.jpg",
     ],
     shortDescription: "Modern Power Catamaran · 38ft · 12 Day Guests",
     description:
