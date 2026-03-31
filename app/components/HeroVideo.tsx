@@ -22,7 +22,7 @@ export default function HeroVideo() {
         playsInline
         preload="auto"
         poster="/images/Hero.jpg"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute top-0 left-1/2 -translate-x-1/2 h-full w-auto"
       >
         <source src="/videos/hero.mp4" type="video/mp4" />
       </video>
