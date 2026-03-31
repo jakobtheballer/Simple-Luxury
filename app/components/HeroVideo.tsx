@@ -24,7 +24,7 @@ export default function HeroVideo() {
         poster="/images/Hero.jpg"
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src="/videos/Moneypenny_Jose_A_Arribas1.mov" type="video/mp4" />
+        <source src="/videos/hero.mp4" type="video/mp4" />
       </video>
 
       {/* Overlay */}
