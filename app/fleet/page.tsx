@@ -3,121 +3,120 @@ import Image from "next/image";
 import { fleet } from "@/lib/fleet";
 
 export const metadata: Metadata = {
-  title: "Hütter Yachts – Exclusive Partner | Simple Luxury",
-  description:
-    "Hütter Yachts: Dr. No, Moneypenny & Goldfinger. Power Catamarans for day charters & overnight stays in Mallorca & Ibiza.",
+  title: "Hütter Yachts – Dr. No, Moneypenny, Goldfinger | Simple Luxury",
+  description: "Exclusive day charters and overnight stays aboard Hütter power catamarans in Mallorca and Ibiza.",
 };
 
 export default function FleetPage() {
+  const hutterYachts = fleet.filter((y) => y.brand === "Hütter");
+
   return (
     <main className="bg-white pt-16">
-      {/* HERO */}
-      <section
-        className="relative h-[45vh] flex items-end justify-start bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/Hero.jpg')" }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0D1F2D]/85 via-[#0D1F2D]/30 to-transparent" />
-        <div className="relative z-10 px-10 pb-10 text-white">
-          <p className="text-xs uppercase tracking-[0.3em] text-white/50 mb-3">Simple Luxury · Exclusive Partner</p>
-          <div className="flex flex-wrap items-center gap-4 mb-2">
-            <h1 className="text-5xl font-bold">Hütter Yachts</h1>
-            <span className="bg-[#FFD700] text-[#0D1F2D] px-3 py-1.5 rounded text-[10px] font-bold uppercase tracking-wider">
-              ✦ Exclusive Partner
-            </span>
-          </div>
-          <p className="text-base font-light text-white/70">Mallorca · Ibiza · Mediterranean</p>
+
+      {/* HEADER */}
+      <section className="py-20 md:py-28 px-6 md:px-10 border-b border-[#0A0A0A]/8" style={{ backgroundColor: "#F5F2EB" }}>
+        <div className="max-w-[1200px] mx-auto">
+          <p className="text-[10px] uppercase tracking-[0.25em] text-[#C9A96E] mb-6">Exclusive Partner</p>
+          <h1 className="text-5xl md:text-7xl text-[#0A0A0A] max-w-lg" style={{ fontFamily: "var(--font-playfair)", fontWeight: 400 }}>
+            Hütter Yachts
+          </h1>
+          <p className="text-sm text-[#0A0A0A]/50 mt-6 max-w-md leading-relaxed">
+            Three distinctive power catamarans available for private day charters and overnight stays across the Balearic Islands.
+          </p>
         </div>
       </section>
 
-      {/* 3 BOATS — large cards */}
-      <section className="py-14 px-6 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {fleet.filter((y) => y.brand === "Hütter").map((yacht) => (
-            <a
-              key={yacht.id}
-              href={`/fleet/${yacht.id}`}
-              className="group border border-gray-200 rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow block"
-            >
-              {/* Image */}
-              <div className="relative h-64 w-full bg-gray-100 overflow-hidden">
-                <Image
-                  src={yacht.image}
-                  alt={`${yacht.name} – ${yacht.type}`}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute bottom-4 left-5 right-5 text-white">
-                  <p className="text-[10px] uppercase tracking-widest text-white/60 mb-1">{yacht.type}</p>
-                  <h2 className="text-2xl font-bold">{yacht.name}</h2>
-                </div>
-              </div>
+      {/* BOATS */}
+      <section className="py-16 md:py-24 px-6 md:px-10">
+        <div className="max-w-[1200px] mx-auto space-y-px bg-[#0A0A0A]/8">
+          {hutterYachts.map((yacht) => {
+            const lowestPrice = yacht.pricing.reduce((min, p) =>
+              parseInt(p.price.replace(/\D/g, "")) < parseInt(min.replace(/\D/g, "")) ? p.price : min,
+              yacht.pricing[0].price
+            );
 
-              {/* Info */}
-              <div className="p-6">
-                <p className="text-gray-500 text-sm mb-4">📍 {yacht.location}</p>
-
-                {/* Specs row */}
-                <div className="grid grid-cols-3 gap-2 mb-5">
-                  {[
-                    { label: "Length", value: yacht.length },
-                    { label: "Day Guests", value: `${yacht.dayGuests}` },
-                    { label: "Cabins", value: `${yacht.cabins}` },
-                  ].map(({ label, value }) => (
-                    <div key={label} className="bg-gray-50 rounded-lg p-3 text-center">
-                      <p className="text-[9px] uppercase tracking-wider text-gray-400 mb-1">{label}</p>
-                      <p className="font-bold text-gray-900 text-sm">{value}</p>
-                    </div>
-                  ))}
+            return (
+              <a
+                key={yacht.id}
+                href={`/fleet/${yacht.id}`}
+                className="group grid grid-cols-1 md:grid-cols-2 bg-white hover:bg-[#F5F2EB] transition-colors duration-300 block"
+              >
+                {/* Image */}
+                <div className="relative overflow-hidden" style={{ aspectRatio: "16/9" }}>
+                  <Image
+                    src={yacht.image}
+                    alt={yacht.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                  />
                 </div>
 
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-[10px] text-gray-400">From</p>
-                    <p className="text-xl font-bold" style={{ color: "#0D1F2D" }}>
-                      {yacht.pricing.reduce((min, p) =>
-                        parseInt(p.price.replace(/\D/g, "")) < parseInt(min.replace(/\D/g, "")) ? p.price : min,
-                        yacht.pricing[0].price
-                      )}
-                      <span className="text-xs font-normal text-gray-400">/day</span>
-                    </p>
+                {/* Info */}
+                <div className="p-10 md:p-14 flex flex-col justify-center">
+                  <p className="text-[9px] uppercase tracking-[0.25em] text-[#C9A96E] mb-4">{yacht.type}</p>
+                  <h2 className="text-3xl md:text-4xl mb-4 text-[#0A0A0A]" style={{ fontFamily: "var(--font-playfair)", fontWeight: 400 }}>
+                    {yacht.name}
+                  </h2>
+                  <p className="text-sm text-[#0A0A0A]/50 mb-8 leading-relaxed max-w-sm">
+                    {yacht.shortDescription}
+                  </p>
+
+                  {/* Specs */}
+                  <div className="flex gap-8 mb-10">
+                    {[
+                      { label: "Length", value: yacht.length },
+                      { label: "Day Guests", value: `${yacht.dayGuests}` },
+                      { label: "Cabins", value: `${yacht.cabins}` },
+                    ].map(({ label, value }) => (
+                      <div key={label}>
+                        <p className="text-[9px] uppercase tracking-[0.15em] text-[#0A0A0A]/30 mb-1">{label}</p>
+                        <p className="text-sm font-medium text-[#0A0A0A]">{value}</p>
+                      </div>
+                    ))}
                   </div>
-                  <span
-                    className="text-sm font-bold px-5 py-2 rounded-full text-white group-hover:opacity-80 transition-opacity"
-                    style={{ backgroundColor: "#0D1F2D" }}
-                  >
-                    View →
-                  </span>
+
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-[9px] uppercase tracking-[0.15em] text-[#0A0A0A]/30 mb-1">From</p>
+                      <p className="text-lg font-medium text-[#0A0A0A]">{lowestPrice}<span className="text-xs text-[#0A0A0A]/40 ml-1">/day</span></p>
+                    </div>
+                    <span className="text-[11px] uppercase tracking-[0.1em] text-[#0A0A0A] border-b border-[#0A0A0A]/20 pb-0.5 group-hover:border-[#0A0A0A] transition-colors duration-300">
+                      View Details →
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </a>
-          ))}
+              </a>
+            );
+          })}
         </div>
       </section>
 
-      {/* LINK TO FULL FLEET */}
-      <section className="pb-14 px-6 text-center">
-        <p className="text-gray-500 mb-4">Looking for more options?</p>
+      {/* FULL FLEET LINK */}
+      <section className="pb-16 px-6 md:px-10 text-center border-t border-[#0A0A0A]/8 pt-16">
+        <p className="text-sm text-[#0A0A0A]/50 mb-6">Looking for a different style or size?</p>
         <a
           href="/fleet/all"
-          className="border-2 border-[#0D1F2D] text-[#0D1F2D] px-10 py-3 rounded font-bold hover:bg-[#0D1F2D] hover:text-white transition inline-block"
+          className="text-[11px] uppercase tracking-[0.1em] border border-[#0A0A0A]/30 text-[#0A0A0A] px-10 py-3 inline-block hover:bg-[#0A0A0A] hover:text-white transition-all duration-300"
         >
-          VIEW OUR LUXURY FLEET →
+          Browse Full Fleet
         </a>
       </section>
 
       {/* CTA */}
-      <section className="py-16 px-8 text-white text-center" style={{ backgroundColor: "#0D1F2D" }}>
-        <h2 className="text-2xl font-bold mb-3">Not sure which yacht fits best?</h2>
-        <p className="text-white/70 mb-6">Message us — we&apos;ll match you with the perfect vessel.</p>
-        <a
-          href="https://wa.me/4915738248355"
-          className="font-bold px-10 py-3 rounded text-base hover:opacity-90 hover:scale-105 transition-transform inline-block shadow-lg"
-          style={{ backgroundColor: "#25D366", color: "#fff" }}
-        >
-          ASK US ON WHATSAPP
-        </a>
+      <section className="py-20 md:py-28 px-6 md:px-10 bg-[#0A0A0A] text-white text-center">
+        <div className="max-w-[680px] mx-auto">
+          <h2 className="text-3xl md:text-4xl mb-4" style={{ fontFamily: "var(--font-playfair)", fontWeight: 400 }}>
+            Not sure which one fits?
+          </h2>
+          <p className="text-sm text-white/50 mb-10">Message us — we&apos;ll match you with the right vessel.</p>
+          <a
+            href="https://wa.me/4915738248355"
+            className="text-[11px] uppercase tracking-[0.15em] border border-white/30 text-white px-10 py-4 inline-block hover:border-white hover:bg-white hover:text-[#0A0A0A] transition-all duration-300"
+          >
+            Ask on WhatsApp
+          </a>
+        </div>
       </section>
     </main>
   );

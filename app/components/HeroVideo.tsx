@@ -12,8 +12,8 @@ export default function HeroVideo() {
   }, []);
 
   return (
-    <section className="relative w-full overflow-hidden" style={{ height: "80vh", minHeight: "500px" }}>
-      {/* Video Background */}
+    <section className="relative w-full overflow-hidden" style={{ height: "100svh", minHeight: "560px" }}>
+      {/* Video */}
       <video
         ref={videoRef}
         autoPlay
@@ -28,32 +28,36 @@ export default function HeroVideo() {
       </video>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/35" />
+      <div className="absolute inset-0 bg-black/50" />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6" style={{ animation: "var(--animate-fade-in)" }}>
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 drop-shadow-lg" style={{ animation: "var(--animate-slide-up)" }}>
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
+        <p className="text-[10px] uppercase tracking-[0.3em] text-white/50 mb-6 animate-fade-up">
+          Mallorca · Ibiza · Formentera
+        </p>
+        <h1
+          className="text-5xl md:text-7xl lg:text-8xl text-white mb-6 animate-fade-up-delay"
+          style={{ fontFamily: "var(--font-playfair)", fontWeight: 400, letterSpacing: "0.02em" }}
+        >
           Luxury Made Simple
         </h1>
-        <p className="text-lg md:text-2xl font-light mb-3 md:mb-4 drop-shadow-md" style={{ animation: "var(--animate-slide-up-delay)" }}>
-          Yacht Charters &amp; Concierge Services
-        </p>
-        <p className="text-sm md:text-lg font-light mb-8 md:mb-10 text-white/80">
-          Mallorca · Ibiza · Mediterranean
+        <p className="text-base md:text-lg text-white/60 max-w-md mb-10 font-light animate-fade-up-delay-2">
+          Private yacht charters and concierge across the Mediterranean.
         </p>
         <a
           href="https://wa.me/4915738248355"
-          className="bg-white text-[#0D1F2D] px-8 md:px-14 py-4 md:py-5 font-bold rounded text-base md:text-lg hover:bg-gray-100 hover:scale-105 transition-transform inline-block shadow-lg"
+          className="text-[11px] uppercase tracking-[0.15em] border border-white/50 text-white px-10 py-4 hover:border-white hover:bg-white hover:text-[#0A0A0A] transition-all duration-300 animate-fade-up-delay-2"
         >
-          BOOK NOW
+          Plan Your Charter
         </a>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-        <svg className="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-        </svg>
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
+        <span className="text-[9px] uppercase tracking-[0.2em] text-white/30">Scroll</span>
+        <div className="w-px h-8 bg-white/20 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full bg-white/60 animate-bounce" style={{ height: "40%" }} />
+        </div>
       </div>
     </section>
   );
