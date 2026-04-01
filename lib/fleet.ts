@@ -901,7 +901,7 @@ export const fleet: Yacht[] = [
       "/images/lady-m/Lady M /3.3.webp",
       "/images/lady-m/Lady M /3.webp",
       "/images/lady-m/Lady M /4",
-      "/images/lady-m/Lady M /5.webp",
+
       "/images/lady-m/Lady M /7.webp",
       "/images/lady-m/Lady M /8.webp",
       "/images/lady-m/Lady M /9.webp",
