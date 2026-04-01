@@ -2,35 +2,49 @@
 
 import { useRef, useEffect } from "react";
 
+const VIDEOS = ["/videos/video1.mp4", "/videos/video2.mp4", "/videos/video3.mp4"];
+
 export default function HeroVideo() {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const refs = [
+    useRef<HTMLVideoElement>(null),
+    useRef<HTMLVideoElement>(null),
+    useRef<HTMLVideoElement>(null),
+  ];
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(() => {});
-    }
+    refs.forEach((r) => r.current?.play().catch(() => {}));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <section className="relative w-full overflow-hidden" style={{ height: "100svh", minHeight: "560px" }}>
-      {/* Video */}
-      <video
-        ref={videoRef}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        poster="/images/Hero.jpg"
-        className="absolute top-0 left-1/2 -translate-x-1/2 h-full w-auto"
-      >
-        <source src="/videos/hero.mp4" type="video/mp4" />
-      </video>
+    <section className="relative overflow-hidden" style={{ width: "100vw", height: "100svh", minHeight: "560px" }}>
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/50" />
+      {/* 3 VIDEOS SIDE BY SIDE */}
+      <div className="absolute inset-0 flex">
+        {VIDEOS.map((src, i) => (
+          <video
+            key={src}
+            ref={refs[i]}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            className="flex-1 h-full"
+            style={{ objectFit: "cover", width: "33.333%" }}
+          >
+            <source src={src} type="video/mp4" />
+          </video>
+        ))}
+      </div>
 
-      {/* Content */}
+      {/* OVERLAY */}
+      <div
+        className="absolute inset-0"
+        style={{ background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.2) 100%)" }}
+      />
+
+      {/* CONTENT */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
         <p className="text-[10px] uppercase tracking-[0.3em] text-white/50 mb-6 animate-fade-up">
           Mallorca · Ibiza · Formentera
@@ -52,7 +66,7 @@ export default function HeroVideo() {
         </a>
       </div>
 
-      {/* Scroll indicator */}
+      {/* SCROLL INDICATOR */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
         <span className="text-[9px] uppercase tracking-[0.2em] text-white/30">Scroll</span>
         <div className="w-px h-8 bg-white/20 relative overflow-hidden">
