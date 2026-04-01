@@ -174,7 +174,7 @@ export default function FleetFilterClient({ yachts }: { yachts: Yacht[] }) {
             <p className="text-sm text-[#0A0A0A]/30 mb-8">Try adjusting your filters.</p>
             <button
               onClick={reset}
-              className="text-[11px] uppercase tracking-[0.1em] border border-[#0A0A0A]/30 text-[#0A0A0A] px-8 py-3 hover:bg-[#0A0A0A] hover:text-white transition-all duration-300"
+              className="block w-full sm:w-auto text-[11px] uppercase tracking-[0.1em] border border-[#0A0A0A]/30 text-[#0A0A0A] px-8 py-3.5 hover:bg-[#0A0A0A] hover:text-white transition-all duration-300"
             >
               Reset Filters
             </button>

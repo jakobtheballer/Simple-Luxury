@@ -14,10 +14,10 @@ export default function FleetPage() {
     <main className="bg-white pt-16">
 
       {/* HEADER */}
-      <section className="py-20 md:py-28 px-6 md:px-10 border-b border-[#0A0A0A]/8" style={{ backgroundColor: "#F5F2EB" }}>
+      <section className="py-14 md:py-28 px-6 md:px-10 border-b border-[#0A0A0A]/8" style={{ backgroundColor: "#F5F2EB" }}>
         <div className="max-w-[1200px] mx-auto">
           <p className="text-[10px] uppercase tracking-[0.25em] text-[#C9A96E] mb-6">Exclusive Partner</p>
-          <h1 className="text-5xl md:text-7xl text-[#0A0A0A] max-w-lg" style={{ fontFamily: "var(--font-playfair)", fontWeight: 400 }}>
+          <h1 className="text-3xl sm:text-5xl md:text-7xl text-[#0A0A0A] max-w-lg" style={{ fontFamily: "var(--font-playfair)", fontWeight: 400 }}>
             Hütter Yachts
           </h1>
           <p className="text-sm text-[#0A0A0A]/50 mt-6 max-w-md leading-relaxed">
@@ -27,8 +27,8 @@ export default function FleetPage() {
       </section>
 
       {/* BOATS */}
-      <section className="py-16 md:py-24 px-6 md:px-10">
-        <div className="max-w-[1200px] mx-auto space-y-px bg-[#0A0A0A]/8">
+      <section className="py-10 md:py-24">
+        <div className="max-w-[1200px] mx-auto md:px-10 space-y-px bg-[#0A0A0A]/8">
           {hutterYachts.map((yacht) => {
             const lowestPrice = yacht.pricing.reduce((min, p) =>
               parseInt(p.price.replace(/\D/g, "")) < parseInt(min.replace(/\D/g, "")) ? p.price : min,
@@ -53,7 +53,7 @@ export default function FleetPage() {
                 </div>
 
                 {/* Info */}
-                <div className="p-10 md:p-14 flex flex-col justify-center">
+                <div className="p-6 md:p-14 flex flex-col justify-center">
                   <p className="text-[9px] uppercase tracking-[0.25em] text-[#C9A96E] mb-4">{yacht.type}</p>
                   <h2 className="text-3xl md:text-4xl mb-4 text-[#0A0A0A]" style={{ fontFamily: "var(--font-playfair)", fontWeight: 400 }}>
                     {yacht.name}
@@ -97,14 +97,14 @@ export default function FleetPage() {
         <p className="text-sm text-[#0A0A0A]/50 mb-6">Looking for a different style or size?</p>
         <a
           href="/fleet/all"
-          className="text-[11px] uppercase tracking-[0.1em] border border-[#0A0A0A]/30 text-[#0A0A0A] px-10 py-3 inline-block hover:bg-[#0A0A0A] hover:text-white transition-all duration-300"
+          className="block w-full sm:w-auto sm:inline-block text-center text-[11px] uppercase tracking-[0.1em] border border-[#0A0A0A]/30 text-[#0A0A0A] px-10 py-3 hover:bg-[#0A0A0A] hover:text-white transition-all duration-300"
         >
           Browse Full Fleet
         </a>
       </section>
 
       {/* CTA */}
-      <section className="py-20 md:py-28 px-6 md:px-10 bg-[#0A0A0A] text-white text-center">
+      <section className="py-14 md:py-28 px-6 md:px-10 bg-[#0A0A0A] text-white text-center">
         <div className="max-w-[680px] mx-auto">
           <h2 className="text-3xl md:text-4xl mb-4" style={{ fontFamily: "var(--font-playfair)", fontWeight: 400 }}>
             Not sure which one fits?
@@ -112,7 +112,7 @@ export default function FleetPage() {
           <p className="text-sm text-white/50 mb-10">Message us — we&apos;ll match you with the right vessel.</p>
           <a
             href="https://wa.me/4915738248355"
-            className="text-[11px] uppercase tracking-[0.15em] border border-white/30 text-white px-10 py-4 inline-block hover:border-white hover:bg-white hover:text-[#0A0A0A] transition-all duration-300"
+            className="block w-full sm:w-auto sm:inline-block text-center text-[11px] uppercase tracking-[0.15em] border border-white/30 text-white px-10 py-4 hover:border-white hover:bg-white hover:text-[#0A0A0A] transition-all duration-300"
           >
             Ask on WhatsApp
           </a>

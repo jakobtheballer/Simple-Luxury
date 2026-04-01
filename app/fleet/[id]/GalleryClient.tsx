@@ -76,7 +76,7 @@ export default function GalleryClient({ images, name }: { images: string[]; name
             ‹
           </button>
           <div
-            className="relative w-full max-w-5xl mx-20 aspect-[3/2]"
+            className="relative w-full max-w-5xl mx-4 md:mx-20 aspect-[3/2]"
             onClick={(e) => e.stopPropagation()}
           >
             <Image

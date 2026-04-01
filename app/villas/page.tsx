@@ -44,10 +44,10 @@ export default function VillasPage() {
     <main className="bg-white pt-16">
 
       {/* HEADER */}
-      <section className="py-20 md:py-28 px-6 md:px-10 border-b border-[#0A0A0A]/8" style={{ backgroundColor: "#F5F2EB" }}>
+      <section className="py-14 md:py-28 px-6 md:px-10 border-b border-[#0A0A0A]/8" style={{ backgroundColor: "#F5F2EB" }}>
         <div className="max-w-[1200px] mx-auto">
           <p className="text-[10px] uppercase tracking-[0.25em] text-[#C9A96E] mb-6">Private Residences</p>
-          <h1 className="text-5xl md:text-7xl text-[#0A0A0A] max-w-lg" style={{ fontFamily: "var(--font-playfair)", fontWeight: 400 }}>
+          <h1 className="text-3xl sm:text-5xl md:text-7xl text-[#0A0A0A] max-w-lg" style={{ fontFamily: "var(--font-playfair)", fontWeight: 400 }}>
             Luxury Villas
           </h1>
           <p className="text-sm text-[#0A0A0A]/50 mt-6 max-w-md leading-relaxed">
@@ -57,8 +57,8 @@ export default function VillasPage() {
       </section>
 
       {/* VILLAS */}
-      <section className="py-16 md:py-24 px-6 md:px-10">
-        <div className="max-w-[1200px] mx-auto space-y-px bg-[#0A0A0A]/8">
+      <section className="py-16 md:py-24">
+        <div className="max-w-[1200px] mx-auto md:px-10 space-y-px bg-[#0A0A0A]/8">
           {villas.map((villa, i) => (
             <div key={villa.name} className="grid grid-cols-1 lg:grid-cols-2 bg-white">
               {/* Image */}
@@ -74,7 +74,7 @@ export default function VillasPage() {
               </div>
 
               {/* Info */}
-              <div className={`flex flex-col justify-center py-12 px-10 md:px-14 ${i % 2 === 1 ? "lg:order-1" : ""}`}>
+              <div className={`flex flex-col justify-center py-8 px-6 md:px-14 ${i % 2 === 1 ? "lg:order-1" : ""}`}>
                 <p className="text-[9px] uppercase tracking-[0.25em] text-[#C9A96E] mb-4">{villa.location}</p>
                 <h2 className="text-3xl md:text-4xl mb-2 text-[#0A0A0A]" style={{ fontFamily: "var(--font-playfair)", fontWeight: 400 }}>
                   {villa.name}
@@ -107,7 +107,7 @@ export default function VillasPage() {
 
                 <a
                   href="https://wa.me/4915738248355"
-                  className="self-start text-[11px] uppercase tracking-[0.1em] border border-[#0A0A0A]/30 text-[#0A0A0A] px-8 py-3 hover:bg-[#0A0A0A] hover:text-white transition-all duration-300"
+                  className="sm:self-start block w-full sm:w-auto text-center text-[11px] uppercase tracking-[0.1em] border border-[#0A0A0A]/30 text-[#0A0A0A] px-8 py-3.5 hover:bg-[#0A0A0A] hover:text-white transition-all duration-300"
                 >
                   Enquire About This Villa →
                 </a>
@@ -118,7 +118,7 @@ export default function VillasPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 md:py-28 px-6 md:px-10 bg-[#0A0A0A] text-white text-center">
+      <section className="py-14 md:py-28 px-6 md:px-10 bg-[#0A0A0A] text-white text-center">
         <div className="max-w-[680px] mx-auto">
           <h2 className="text-3xl md:text-4xl mb-4" style={{ fontFamily: "var(--font-playfair)", fontWeight: 400 }}>
             Something specific in mind?
@@ -128,7 +128,7 @@ export default function VillasPage() {
           </p>
           <a
             href="https://wa.me/4915738248355"
-            className="text-[11px] uppercase tracking-[0.15em] border border-white/30 text-white px-10 py-4 inline-block hover:border-white hover:bg-white hover:text-[#0A0A0A] transition-all duration-300"
+            className="block w-full sm:w-auto sm:inline-block text-center text-[11px] uppercase tracking-[0.15em] border border-white/30 text-white px-10 py-4 hover:border-white hover:bg-white hover:text-[#0A0A0A] transition-all duration-300"
           >
             Speak to Concierge
           </a>

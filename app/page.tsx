@@ -19,10 +19,10 @@ export default function Home() {
       <HeroVideo />
 
       {/* SERVICES */}
-      <section className="py-24 md:py-32 px-6 md:px-10" style={{ backgroundColor: "#F5F2EB" }}>
+      <section className="py-16 md:py-32 px-6 md:px-10" style={{ backgroundColor: "#F5F2EB" }}>
         <div className="max-w-[1200px] mx-auto">
           <p className="text-[10px] uppercase tracking-[0.25em] text-[#C9A96E] mb-6">What We Offer</p>
-          <h2 className="text-4xl md:text-5xl mb-16 max-w-lg" style={{ fontFamily: "var(--font-playfair)", fontWeight: 400 }}>
+          <h2 className="text-3xl md:text-5xl mb-10 md:mb-16 max-w-lg" style={{ fontFamily: "var(--font-playfair)", fontWeight: 400 }}>
             One call. Everything arranged.
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-[#0A0A0A]/10">
@@ -52,7 +52,7 @@ export default function Home() {
               <a
                 key={s.href}
                 href={s.href}
-                className={`group block p-10 md:p-12 border-[#0A0A0A]/10 hover:bg-white transition-colors duration-300 ${i > 0 ? "border-t md:border-t-0 md:border-l" : ""}`}
+                className={`group block p-7 md:p-12 border-[#0A0A0A]/10 hover:bg-white transition-colors duration-300 ${i > 0 ? "border-t md:border-t-0 md:border-l" : ""}`}
               >
                 <p className="text-[10px] uppercase tracking-[0.2em] text-[#C9A96E] mb-6">{s.label}</p>
                 <h3 className="text-2xl mb-4 text-[#0A0A0A]" style={{ fontFamily: "var(--font-playfair)", fontWeight: 400 }}>
@@ -69,12 +69,12 @@ export default function Home() {
       </section>
 
       {/* FLEET TEASER */}
-      <section className="py-24 md:py-32 px-6 md:px-10">
+      <section className="py-16 md:py-32 px-6 md:px-10">
         <div className="max-w-[1200px] mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-16 gap-6">
             <div>
               <p className="text-[10px] uppercase tracking-[0.25em] text-[#C9A96E] mb-6">Exclusive Partner</p>
-              <h2 className="text-4xl md:text-5xl text-[#0A0A0A]" style={{ fontFamily: "var(--font-playfair)", fontWeight: 400 }}>
+              <h2 className="text-3xl md:text-5xl text-[#0A0A0A]" style={{ fontFamily: "var(--font-playfair)", fontWeight: 400 }}>
                 Hütter Yachts
               </h2>
             </div>
@@ -123,7 +123,7 @@ export default function Home() {
       </section>
 
       {/* STATS */}
-      <section className="py-24 md:py-32 px-6 md:px-10 bg-[#0A0A0A] text-white">
+      <section className="py-16 md:py-32 px-6 md:px-10 bg-[#0A0A0A] text-white">
         <div className="max-w-[1200px] mx-auto grid grid-cols-3 gap-6 text-center">
           {[
             { num: "500+", label: "Guests Hosted" },
@@ -131,7 +131,7 @@ export default function Home() {
             { num: "24/7", label: "Concierge" },
           ].map(({ num, label }) => (
             <div key={label}>
-              <p className="text-4xl md:text-6xl mb-3 text-white" style={{ fontFamily: "var(--font-playfair)", fontWeight: 400 }}>
+              <p className="text-3xl md:text-6xl mb-3 text-white" style={{ fontFamily: "var(--font-playfair)", fontWeight: 400 }}>
                 {num}
               </p>
               <p className="text-[10px] uppercase tracking-[0.2em] text-white/40">{label}</p>
@@ -144,10 +144,10 @@ export default function Home() {
       <Testimonials />
 
       {/* CTA */}
-      <section className="py-24 md:py-32 px-6 md:px-10 text-center" style={{ backgroundColor: "#F5F2EB" }}>
+      <section className="py-16 md:py-32 px-6 md:px-10 text-center" style={{ backgroundColor: "#F5F2EB" }}>
         <div className="max-w-[680px] mx-auto">
           <p className="text-[10px] uppercase tracking-[0.25em] text-[#C9A96E] mb-8">Get Started</p>
-          <h2 className="text-4xl md:text-5xl mb-6 text-[#0A0A0A]" style={{ fontFamily: "var(--font-playfair)", fontWeight: 400 }}>
+          <h2 className="text-3xl md:text-5xl mb-6 text-[#0A0A0A]" style={{ fontFamily: "var(--font-playfair)", fontWeight: 400 }}>
             Ready to plan your trip?
           </h2>
           <p className="text-sm text-[#0A0A0A]/60 mb-10 leading-relaxed">
@@ -155,7 +155,7 @@ export default function Home() {
           </p>
           <a
             href="https://wa.me/4915738248355"
-            className="text-[11px] uppercase tracking-[0.15em] border border-[#0A0A0A] text-[#0A0A0A] px-12 py-4 inline-block hover:bg-[#0A0A0A] hover:text-white transition-all duration-300"
+            className="block w-full sm:w-auto sm:inline-block text-center text-[11px] uppercase tracking-[0.15em] border border-[#0A0A0A] text-[#0A0A0A] px-12 py-4 hover:bg-[#0A0A0A] hover:text-white transition-all duration-300"
           >
             Plan Your Charter
           </a>

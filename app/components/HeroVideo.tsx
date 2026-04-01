@@ -50,7 +50,7 @@ export default function HeroVideo() {
           Mallorca · Ibiza · Formentera
         </p>
         <h1
-          className="text-5xl md:text-7xl lg:text-8xl text-white mb-6 animate-fade-up-delay"
+          className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl text-white mb-6 animate-fade-up-delay"
           style={{ fontFamily: "var(--font-playfair)", fontWeight: 400, letterSpacing: "0.02em" }}
         >
           Luxury Made Simple
@@ -60,7 +60,7 @@ export default function HeroVideo() {
         </p>
         <a
           href="https://wa.me/4915738248355"
-          className="text-[11px] uppercase tracking-[0.15em] border border-white/50 text-white px-10 py-4 hover:border-white hover:bg-white hover:text-[#0A0A0A] transition-all duration-300 animate-fade-up-delay-2"
+          className="block w-full sm:w-auto text-center text-[11px] uppercase tracking-[0.15em] border border-white/50 text-white px-10 py-4 hover:border-white hover:bg-white hover:text-[#0A0A0A] transition-all duration-300 animate-fade-up-delay-2"
         >
           Plan Your Charter
         </a>

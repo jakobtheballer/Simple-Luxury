@@ -75,7 +75,7 @@ export default async function YachtDetailPage({ params }: Props) {
             {yacht.brand === "Hütter" && (
               <p className="text-[10px] uppercase tracking-[0.25em] text-[#C9A96E] mb-3">Exclusive Partner · House of Hütter</p>
             )}
-            <h1 className="text-4xl md:text-6xl text-white" style={{ fontFamily: "var(--font-playfair)", fontWeight: 400 }}>
+            <h1 className="text-3xl md:text-6xl text-white" style={{ fontFamily: "var(--font-playfair)", fontWeight: 400 }}>
               {yacht.name}
             </h1>
             <p className="text-sm text-white/50 mt-2">{yacht.type} · {yacht.location}</p>
@@ -90,7 +90,7 @@ export default async function YachtDetailPage({ params }: Props) {
 
       {/* SPECS ROW */}
       <div className="border-b border-[#0A0A0A]/8" style={{ backgroundColor: "#F5F2EB" }}>
-        <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-8 flex flex-wrap gap-x-10 gap-y-5">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-6 md:py-8 flex flex-wrap gap-x-8 gap-y-4">
           {yacht.specs.map(({ label, value }, i) => (
             <div key={label} className={`flex items-center gap-8 ${i > 0 ? "" : ""}`}>
               {i > 0 && <div className="hidden md:block w-px h-8 bg-[#0A0A0A]/15" />}
@@ -104,8 +104,8 @@ export default async function YachtDetailPage({ params }: Props) {
       </div>
 
       {/* MAIN CONTENT */}
-      <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-16 md:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 md:gap-20">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-10 md:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 md:gap-20">
 
           {/* LEFT 60%: Description + Gallery + Features */}
           <div className="lg:col-span-3 space-y-16 md:space-y-20">
@@ -268,7 +268,7 @@ export default async function YachtDetailPage({ params }: Props) {
           <p className="text-sm text-white/40 mb-8">Tell us your dates and we&apos;ll handle everything.</p>
           <a
             href={`https://wa.me/4915738248355?text=Hi%2C%20I%27d%20like%20to%20book%20${encodeURIComponent(yacht.name)}.`}
-            className="text-[11px] uppercase tracking-[0.15em] border border-white/30 text-white px-10 py-4 inline-block hover:border-white hover:bg-white hover:text-[#0A0A0A] transition-all duration-300"
+            className="block w-full sm:w-auto sm:inline-block text-center text-[11px] uppercase tracking-[0.15em] border border-white/30 text-white px-10 py-4 hover:border-white hover:bg-white hover:text-[#0A0A0A] transition-all duration-300"
           >
             Plan Your Charter
           </a>
