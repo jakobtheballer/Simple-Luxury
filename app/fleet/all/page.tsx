@@ -3,37 +3,47 @@ import { fleet } from "@/lib/fleet";
 import FleetFilterClient from "./FleetFilterClient";
 
 export const metadata: Metadata = {
-  title: "Our Luxury Fleet – Mallorca & Ibiza | Simple Luxury",
-  description:
-    "Browse our full luxury fleet for charter in Mallorca & Ibiza. Filter by location, type, and price.",
+  title: "Full Fleet – Yacht Charters Mallorca & Ibiza | Simple Luxury",
+  description: "Browse our complete fleet of luxury yachts available for charter in Mallorca, Ibiza and Formentera.",
 };
 
 export default function AllFleetPage() {
   return (
     <main className="bg-white pt-16">
+
       {/* HEADER */}
-      <section className="py-12 px-8 text-center max-w-3xl mx-auto">
-        <a href="/fleet" className="text-gray-400 hover:text-gray-700 text-sm mb-6 inline-block">
-          ← Hütter Yachts
-        </a>
-        <h1 className="text-5xl font-bold mb-2" style={{ color: "#0D1F2D" }}>Our Luxury Fleet</h1>
-        <p className="text-gray-400 mt-2">Mallorca · Ibiza · Mediterranean</p>
+      <section className="py-20 md:py-28 px-6 md:px-10 border-b border-[#0A0A0A]/8" style={{ backgroundColor: "#F5F2EB" }}>
+        <div className="max-w-[1200px] mx-auto">
+          <a href="/fleet" className="text-[10px] uppercase tracking-[0.2em] text-[#0A0A0A]/40 hover:text-[#0A0A0A] transition-colors duration-300 mb-8 inline-block">
+            ← Hütter Yachts
+          </a>
+          <p className="text-[10px] uppercase tracking-[0.25em] text-[#C9A96E] mb-6">All Available Vessels</p>
+          <h1 className="text-5xl md:text-7xl text-[#0A0A0A]" style={{ fontFamily: "var(--font-playfair)", fontWeight: 400 }}>
+            Full Fleet
+          </h1>
+          <p className="text-sm text-[#0A0A0A]/50 mt-6 max-w-md leading-relaxed">
+            Mallorca · Ibiza · Formentera
+          </p>
+        </div>
       </section>
 
-      {/* FILTER + GRID (Client) */}
+      {/* FILTER + GRID */}
       <FleetFilterClient yachts={fleet} />
 
       {/* CTA */}
-      <section className="py-16 px-8 text-white text-center" style={{ backgroundColor: "#0D1F2D" }}>
-        <h2 className="text-2xl font-bold mb-3">Can&apos;t find what you&apos;re looking for?</h2>
-        <p className="text-white/70 mb-6">We have access to hundreds of yachts across the Mediterranean.</p>
-        <a
-          href="https://wa.me/4915738248355"
-          className="font-bold px-10 py-3 rounded text-base hover:opacity-90 hover:scale-105 transition-transform inline-block shadow-lg"
-          style={{ backgroundColor: "#25D366", color: "#fff" }}
-        >
-          ASK US ON WHATSAPP
-        </a>
+      <section className="py-20 md:py-28 px-6 md:px-10 bg-[#0A0A0A] text-white text-center">
+        <div className="max-w-[680px] mx-auto">
+          <h2 className="text-3xl md:text-4xl mb-4" style={{ fontFamily: "var(--font-playfair)", fontWeight: 400 }}>
+            Need something specific?
+          </h2>
+          <p className="text-sm text-white/50 mb-10">We have access to hundreds of vessels across the Mediterranean.</p>
+          <a
+            href="https://wa.me/4915738248355"
+            className="text-[11px] uppercase tracking-[0.15em] border border-white/30 text-white px-10 py-4 inline-block hover:border-white hover:bg-white hover:text-[#0A0A0A] transition-all duration-300"
+          >
+            Ask on WhatsApp
+          </a>
+        </div>
       </section>
     </main>
   );

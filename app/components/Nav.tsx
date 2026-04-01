@@ -52,6 +52,7 @@ export default function Nav() {
             {[
               { href: "/villas", label: "Villas" },
               { href: "/services", label: "Services" },
+              { href: "/contact", label: "Contact" },
             ].map(({ href, label }) => (
               <a key={href} href={href} className="text-[11px] uppercase tracking-[0.1em] text-white/70 hover:text-white transition-colors duration-300">
                 {label}
@@ -100,6 +101,7 @@ export default function Nav() {
               { href: "/fleet/all", label: "Full Fleet" },
               { href: "/villas", label: "Villas" },
               { href: "/services", label: "Services" },
+              { href: "/contact", label: "Contact" },
             ].map(({ href, label }) => (
               <a
                 key={href}
