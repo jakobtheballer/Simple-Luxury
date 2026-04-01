@@ -51,7 +51,7 @@ export default function FleetFilterClient({ yachts }: { yachts: Yacht[] }) {
   return (
     <>
       {/* FILTER BAR */}
-      <div className="lg:sticky top-16 z-30 bg-[#0A0A0A] text-white border-b border-white/10">
+      <div className="bg-[#0A0A0A] text-white border-b border-white/10">
         {/* Mobile toggle */}
         <button
           onClick={() => setFiltersOpen(!filtersOpen)}
@@ -106,25 +106,28 @@ export default function FleetFilterClient({ yachts }: { yachts: Yacht[] }) {
               </div>
             </div>
 
-            {/* Price slider */}
-            <div className="flex-1 min-w-48">
-              <p className="text-[9px] uppercase tracking-[0.2em] text-white/30 mb-2.5">
-                Max Price:{" "}
-                <span className="text-white">
-                  {maxPrice >= MAX_PRICE ? "No limit" : `€${maxPrice.toLocaleString()}/day`}
-                </span>
-              </p>
-              <input
-                type="range"
-                min={500}
-                max={MAX_PRICE}
-                step={500}
-                value={maxPrice}
-                onChange={(e) => setMaxPrice(Number(e.target.value))}
-                className="w-full h-px cursor-pointer accent-white"
-              />
-              <div className="flex justify-between text-[9px] text-white/20 mt-1.5">
-                <span>€500</span><span>€{MAX_PRICE.toLocaleString()}+</span>
+            {/* Price presets */}
+            <div>
+              <p className="text-[9px] uppercase tracking-[0.2em] text-white/30 mb-2.5">Budget</p>
+              <div className="flex gap-2 flex-wrap">
+                {([
+                  { label: "All",       value: MAX_PRICE },
+                  { label: "≤ €5k",     value: 5000 },
+                  { label: "≤ €10k",    value: 10000 },
+                  { label: "≤ €20k",    value: 20000 },
+                ] as { label: string; value: number }[]).map(({ label, value }) => (
+                  <button
+                    key={label}
+                    onClick={() => setMaxPrice(value)}
+                    className="text-[10px] uppercase tracking-[0.1em] px-3 py-1.5 border transition-all duration-200"
+                    style={{
+                      borderColor: maxPrice === value ? "rgba(255,255,255,0.8)" : "rgba(255,255,255,0.15)",
+                      color: maxPrice === value ? "#fff" : "rgba(255,255,255,0.45)",
+                    }}
+                  >
+                    {label}
+                  </button>
+                ))}
               </div>
             </div>
 
