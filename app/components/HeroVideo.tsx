@@ -5,6 +5,7 @@ import { useRef, useEffect } from "react";
 const VIDEOS = ["/videos/video1.mp4", "/videos/video2.mp4", "/videos/video3.mp4"];
 
 export default function HeroVideo() {
+  const mobileRef = useRef<HTMLVideoElement>(null);
   const refs = [
     useRef<HTMLVideoElement>(null),
     useRef<HTMLVideoElement>(null),
@@ -12,6 +13,7 @@ export default function HeroVideo() {
   ];
 
   useEffect(() => {
+    mobileRef.current?.play().catch(() => {});
     refs.forEach((r) => r.current?.play().catch(() => {}));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -19,8 +21,22 @@ export default function HeroVideo() {
   return (
     <section className="relative overflow-hidden" style={{ width: "100vw", height: "100svh", minHeight: "560px" }}>
 
-      {/* 3 VIDEOS SIDE BY SIDE */}
-      <div className="absolute inset-0 flex">
+      {/* MOBILE: single hero video */}
+      <video
+        ref={mobileRef}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        className="md:hidden absolute inset-0"
+        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+      >
+        <source src="/videos/hero.mp4" type="video/mp4" />
+      </video>
+
+      {/* DESKTOP: 3 videos side by side */}
+      <div className="hidden md:flex absolute inset-0">
         {VIDEOS.map((src, i) => (
           <video
             key={src}
