@@ -4,7 +4,14 @@ import FleetFilterClient from "./FleetFilterClient";
 
 export const metadata: Metadata = {
   title: "Full Fleet – Yacht Charters Mallorca & Ibiza | Simple Luxury",
-  description: "Browse our complete fleet of luxury yachts available for charter in Mallorca, Ibiza and Formentera.",
+  description: "Browse our complete fleet of luxury yachts available for charter in Mallorca, Ibiza and Formentera. Day charters, week charters, and overnight expeditions.",
+  alternates: { canonical: "https://simpleluxuryservice.de/fleet/all" },
+  openGraph: {
+    title: "Full Charter Fleet | Simple Luxury",
+    description: "Luxury yachts available for private charter in Mallorca, Ibiza and Formentera.",
+    url: "https://simpleluxuryservice.de/fleet/all",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Luxury Yacht Charter Fleet – Simple Luxury" }],
+  },
 };
 
 export default function AllFleetPage() {

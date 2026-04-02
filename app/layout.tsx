@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "./components/Nav";
+import { getLocalBusinessSchema, getOrganizationSchema, getServiceSchema } from "@/lib/structured-data";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -17,13 +18,38 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Simple Luxury – Yacht Charters & Concierge | Mallorca & Ibiza",
-  description: "Private yacht charters, luxury villas and concierge services across Mallorca, Ibiza and Formentera. Dr. No, Moneypenny, Goldfinger.",
-  keywords: "Yacht Charter Mallorca, Ibiza Boat Rental, Luxury Catamaran, Mediterranean Sailing, Yacht Charter Ibiza",
+  title: "Simple Luxury | Premium Concierge & Yacht Charter Ibiza Mallorca",
+  description: "Luxury concierge services in Ibiza, Mallorca & Formentera. Private yacht charters, exclusive villas, fine dining, and bespoke lifestyle experiences for high-net-worth clients.",
+  keywords: "luxury concierge Ibiza, yacht charter Mallorca, private villas Balearics, luxury experiences Formentera, yacht charter Ibiza, concierge service Mallorca",
+  metadataBase: new URL("https://simpleluxuryservice.de"),
+  alternates: {
+    canonical: "https://simpleluxuryservice.de",
+  },
   openGraph: {
-    title: "Simple Luxury – Yacht Charters & Concierge",
-    description: "Private yacht charters and luxury concierge across the Mediterranean.",
+    title: "Simple Luxury | Exclusive Balearic Experiences",
+    description: "Premium concierge & yacht charter services in Ibiza, Mallorca and Formentera.",
+    url: "https://simpleluxuryservice.de",
+    siteName: "Simple Luxury",
     type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Simple Luxury – Yacht Charter & Concierge Ibiza Mallorca",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Simple Luxury | Exclusive Balearic Experiences",
+    description: "Luxury concierge, yacht charters & private villas in Ibiza, Mallorca & Formentera.",
+    images: ["/og-image.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
 };
 
@@ -33,6 +59,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className="min-h-full flex flex-col">
 
         <Nav />
+
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(getLocalBusinessSchema()) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(getOrganizationSchema()) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(getServiceSchema()) }} />
 
         <div className="flex-1">
           {children}

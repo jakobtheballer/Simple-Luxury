@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Disallow: /impressum
+Disallow: /datenschutz
+Disallow: /impressum-en
+Disallow: /privacy
+Disallow: /legal/
+
+Sitemap: https://simpleluxuryservice.de/sitemap.xml

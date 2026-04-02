@@ -5,8 +5,15 @@ import HeroVideo from "./components/HeroVideo";
 import { fleet } from "@/lib/fleet";
 
 export const metadata: Metadata = {
-  title: "Simple Luxury – Yacht Charters & Concierge | Mallorca & Ibiza",
-  description: "Private yacht charters, luxury villas and concierge across Mallorca, Ibiza and Formentera.",
+  title: "Simple Luxury | Premium Concierge & Yacht Charter Ibiza Mallorca",
+  description: "Luxury concierge services in Ibiza, Mallorca & Formentera. Private yacht charters, exclusive villas, fine dining, and bespoke lifestyle experiences for discerning clients.",
+  alternates: { canonical: "https://simpleluxuryservice.de" },
+  openGraph: {
+    title: "Simple Luxury | Exclusive Balearic Experiences",
+    description: "Premium concierge & yacht charter services in Ibiza, Mallorca and Formentera.",
+    url: "https://simpleluxuryservice.de",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Simple Luxury – Yacht Charter & Concierge Ibiza Mallorca" }],
+  },
 };
 
 export default function Home() {

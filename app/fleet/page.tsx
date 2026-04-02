@@ -4,7 +4,14 @@ import { fleet } from "@/lib/fleet";
 
 export const metadata: Metadata = {
   title: "Hütter Yachts – Dr. No, Moneypenny, Goldfinger | Simple Luxury",
-  description: "Exclusive day charters and overnight stays aboard Hütter power catamarans in Mallorca and Ibiza.",
+  description: "Exclusive day charters and overnight stays aboard Hütter power catamarans in Mallorca and Ibiza. Book your private charter experience.",
+  alternates: { canonical: "https://simpleluxuryservice.de/fleet" },
+  openGraph: {
+    title: "Hütter Yachts – Exclusive Charter Fleet | Simple Luxury",
+    description: "Charter Dr. No, Moneypenny or Goldfinger for a private day or overnight experience in Mallorca and Ibiza.",
+    url: "https://simpleluxuryservice.de/fleet",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Hütter Yacht Charter – Simple Luxury" }],
+  },
 };
 
 export default function FleetPage() {

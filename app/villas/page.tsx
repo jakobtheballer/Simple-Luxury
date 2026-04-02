@@ -3,7 +3,14 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Private Villas – Mallorca, Ibiza & Formentera | Simple Luxury",
-  description: "Exclusive villa rentals on the Balearic Islands. Private pools, sea views, dedicated staff. Minimum 3 nights.",
+  description: "Exclusive villa rentals on the Balearic Islands. Private pools, sea views, dedicated staff. Curated selection for discerning guests.",
+  alternates: { canonical: "https://simpleluxuryservice.de/villas" },
+  openGraph: {
+    title: "Exclusive Private Villas | Simple Luxury",
+    description: "Luxury villa rentals in Mallorca, Ibiza and Formentera with private pools, sea views and dedicated staff.",
+    url: "https://simpleluxuryservice.de/villas",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Private Villas Ibiza Mallorca – Simple Luxury" }],
+  },
 };
 
 const villas = [
