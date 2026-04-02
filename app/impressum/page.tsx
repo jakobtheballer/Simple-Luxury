@@ -23,7 +23,7 @@ export default function ImpressumPage() {
 
           <div>
             <h2 className="text-[10px] uppercase tracking-[0.2em] text-[#0A0A0A]/40 mb-3">Angaben gemäß § 5 TMG</h2>
-            <p className="text-[#0A0A0A] font-medium mb-1">Hütter & Streich Adventures GbR</p>
+            <p className="text-[#0A0A0A] font-medium mb-1">Hütter & Streich Adventures</p>
             <p className="text-[#0A0A0A] font-medium mb-1">Simple Luxury</p>
             <p>Moltkestraße 39</p>
             <p>69120 Heidelberg</p>
