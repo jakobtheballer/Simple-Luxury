@@ -201,9 +201,8 @@ export const fleet: Yacht[] = [
     overnightGuests: 6,
     cabins: 3,
     crew: 2,
-    image: "/images/goldfinger/1.jpg",
+    image: "/images/goldfinger/1.1.jpg",
     images: [
-      "/images/goldfinger/1.jpg",
       "/images/goldfinger/1.1.jpg",
       "/images/goldfinger/3.jpg",
       "/images/goldfinger/4.jpg",
