@@ -22,7 +22,6 @@ export const getLocalBusinessSchema = () => ({
     { "@type": "City", name: "Ibiza",       sameAs: "https://en.wikipedia.org/wiki/Ibiza" },
     { "@type": "City", name: "Mallorca",    sameAs: "https://en.wikipedia.org/wiki/Mallorca" },
     { "@type": "City", name: "Formentera",  sameAs: "https://en.wikipedia.org/wiki/Formentera" },
-    { "@type": "City", name: "Menorca",     sameAs: "https://en.wikipedia.org/wiki/Menorca" },
   ],
   knowsAbout: [
     "Yacht Charter", "Luxury Concierge", "Villa Rental",
@@ -37,7 +36,7 @@ export const getLocalBusinessSchema = () => ({
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
     dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-    opens: "08:00",
+    opens: "00:00",
     closes: "23:59",
   },
 });
@@ -74,7 +73,7 @@ export const getServiceSchema = () => ({
   "@id": `${BASE_URL}/#services`,
   name: "Luxury Concierge & Yacht Charter",
   provider: { "@type": "LocalBusiness", name: "Simple Luxury", url: BASE_URL },
-  areaServed: ["Ibiza", "Mallorca", "Formentera", "Menorca"],
+  areaServed: ["Ibiza", "Mallorca", "Formentera"],
   hasOfferingDetails: [
     {
       "@type": "Service",

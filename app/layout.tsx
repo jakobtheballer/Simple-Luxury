@@ -18,16 +18,16 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Simple Luxury | Premium Concierge & Yacht Charter Ibiza Mallorca",
-  description: "Luxury concierge services in Ibiza, Mallorca & Formentera. Private yacht charters, exclusive villas, fine dining, and bespoke lifestyle experiences for high-net-worth clients.",
-  keywords: "luxury concierge Ibiza, yacht charter Mallorca, private villas Balearics, luxury experiences Formentera, yacht charter Ibiza, concierge service Mallorca",
+  title: "Simple Luxury | Hütter & Streich Adventures – Yacht Charter & Concierge Ibiza Mallorca",
+  description: "Hütter & Streich Adventures – premium luxury concierge and yacht charter in Ibiza, Mallorca & Formentera. Private charters, exclusive villas, fine dining, and bespoke experiences.",
+  keywords: "luxury concierge Ibiza, yacht charter Mallorca, Hütter Streich Adventures, private villas Balearics, luxury experiences Formentera, yacht charter Ibiza, concierge service Mallorca",
   metadataBase: new URL("https://simpleluxuryservice.de"),
   alternates: {
     canonical: "https://simpleluxuryservice.de",
   },
   openGraph: {
-    title: "Simple Luxury | Exclusive Balearic Experiences",
-    description: "Premium concierge & yacht charter services in Ibiza, Mallorca and Formentera.",
+    title: "Simple Luxury | Hütter & Streich Adventures – Exclusive Balearic Experiences",
+    description: "Hütter & Streich Adventures – premium concierge & yacht charter services in Ibiza, Mallorca and Formentera.",
     url: "https://simpleluxuryservice.de",
     siteName: "Simple Luxury",
     type: "website",
@@ -42,8 +42,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Simple Luxury | Exclusive Balearic Experiences",
-    description: "Luxury concierge, yacht charters & private villas in Ibiza, Mallorca & Formentera.",
+    title: "Simple Luxury | Hütter & Streich Adventures – Exclusive Balearic Experiences",
+    description: "Hütter & Streich Adventures – luxury concierge, yacht charters & private villas in Ibiza, Mallorca & Formentera.",
     images: ["/og-image.jpg"],
   },
   robots: {
