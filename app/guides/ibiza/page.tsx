@@ -242,7 +242,7 @@ export default function IbizaGuidePage() {
                   Helicopter Tour of the Island
                 </h3>
                 <GuideImage
-                  src="/images/guides/ibiza/ibiza-aerial-helicopter.jpg"
+                  src="/images/guides/helicoptee.jpg"
                   alt="Aerial view of Ibiza coastline and Es Vedrà island from helicopter"
                   caption="Es Vedrà and the southwest coast from a private helicopter"
                 />
