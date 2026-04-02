@@ -31,21 +31,23 @@ function GuideImage({
   alt,
   caption,
   priority = false,
+  objectFit = "cover",
 }: {
   src: string;
   alt: string;
   caption?: string;
   priority?: boolean;
+  objectFit?: "cover" | "contain";
 }) {
   return (
     <figure className="my-8 w-full">
-      <div className="relative w-full aspect-[16/9] rounded-lg overflow-hidden shadow-lg">
+      <div className="relative w-full aspect-[16/9] rounded-lg overflow-hidden shadow-lg" style={{ backgroundColor: objectFit === "contain" ? "#F5F2EB" : undefined }}>
         <Image
           src={src}
           alt={alt}
           fill
           sizes="(max-width: 768px) 100vw, 896px"
-          className="object-cover"
+          className={objectFit === "contain" ? "object-contain" : "object-cover"}
           priority={priority}
         />
       </div>
@@ -360,7 +362,8 @@ export default function IbizaGuidePage() {
             Culinary Excellence in Ibiza
           </h2>
           <GuideImage
-            src="/images/guides/ibiza/ibiza-beachclub-dining.jpg"
+            src="/images/guides/cehf villa .jpg"
+            objectFit="contain"
             alt="Bohemian beach club dining with sunset Mediterranean views"
             caption="Dining in Ibiza at its best — the sea as backdrop, the evening unhurried"
           />
