@@ -46,6 +46,9 @@ export const metadata: Metadata = {
     description: "Hütter & Streich Adventures – luxury concierge, yacht charters & private villas in Ibiza, Mallorca & Formentera.",
     images: ["/og-image.jpg"],
   },
+  verification: {
+    google: "KTxqWXPhIvSCMiYQNr_4iDO3_nUyy123zWim9Gjr9e4",
+  },
   robots: {
     index: true,
     follow: true,
