@@ -275,7 +275,7 @@ export default function IbizaGuidePage() {
             Where to Stay in Ibiza
           </h2>
           <GuideImage
-            src="/images/guides/where to stay.jpg"
+            src="/images/guides/where to stay 3.jpg"
             alt="Luxury clifftop villa with infinity pool overlooking Mediterranean Sea"
             caption="A clifftop infinity pool — the private villas we recommend are chosen for views like this"
           />
