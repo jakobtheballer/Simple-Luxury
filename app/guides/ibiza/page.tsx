@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Cormorant_Garamond } from "next/font/google";
 
 const cormorant = Cormorant_Garamond({
@@ -17,13 +18,48 @@ export const metadata: Metadata = {
     description:
       "Private yacht charters, exclusive villas, fine dining and the finest beaches in Ibiza — your complete luxury guide.",
     url: "https://simpleluxuryservice.de/guides/ibiza",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Ibiza Luxury Guide – Simple Luxury" }],
+    images: [{ url: "/images/guides/ibiza/ibiza-hero-yacht-sunset.jpg", width: 1200, height: 630, alt: "Ibiza Luxury Guide – Simple Luxury" }],
   },
 };
 
 const GOLD = "#C9A96E";
 const DARK = "#0A0A0A";
 const CREAM = "#F5F2EB";
+
+function GuideImage({
+  src,
+  alt,
+  caption,
+  priority = false,
+}: {
+  src: string;
+  alt: string;
+  caption?: string;
+  priority?: boolean;
+}) {
+  return (
+    <figure className="my-8 w-full">
+      <div className="relative w-full aspect-[16/9] rounded-lg overflow-hidden shadow-lg">
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          sizes="(max-width: 768px) 100vw, 896px"
+          className="object-cover"
+          priority={priority}
+        />
+      </div>
+      {caption && (
+        <figcaption
+          className={`${cormorant.className} mt-3 text-sm font-light text-center`}
+          style={{ color: `${DARK}60` }}
+        >
+          {caption}
+        </figcaption>
+      )}
+    </figure>
+  );
+}
 
 export default function IbizaGuidePage() {
   return (
@@ -45,6 +81,18 @@ export default function IbizaGuidePage() {
             world-class cuisine and seas so clear they barely seem real. This is the island we know intimately,
             and the one we want to show you.
           </p>
+        </div>
+      </section>
+
+      {/* HERO IMAGE */}
+      <section className="px-6 md:px-10 -mt-1" style={{ backgroundColor: DARK }}>
+        <div className="max-w-4xl mx-auto pb-16 md:pb-20">
+          <GuideImage
+            src="/images/guides/ibiza/ibiza-hero-yacht-sunset.jpg"
+            alt="Luxury superyacht sailing at sunset in Ibiza with turquoise Mediterranean waters"
+            caption="The west coast of Ibiza, viewed from the deck of a private charter yacht at golden hour"
+            priority
+          />
         </div>
       </section>
 
@@ -78,11 +126,17 @@ export default function IbizaGuidePage() {
       <section id="experiences" className="py-16 md:py-28 px-6 md:px-10">
         <div className="max-w-4xl mx-auto">
           <p className="text-[10px] uppercase tracking-[0.25em] mb-4" style={{ color: GOLD }}>Curated Experiences</p>
-          <h2 className={`${cormorant.className} text-4xl md:text-6xl font-light mb-14`} style={{ color: DARK }}>
+          <h2 className={`${cormorant.className} text-4xl md:text-6xl font-light mb-8`} style={{ color: DARK }}>
             Top 5 Exclusive Experiences
           </h2>
 
-          <div className="space-y-16">
+          <GuideImage
+            src="/images/guides/ibiza/ibiza-yacht-sailing.jpg"
+            alt="Professional crew sailing luxury yacht with sunset drinks on deck"
+            caption="Aboard a private charter — Ibiza's west coast from the water"
+          />
+
+          <div className="space-y-16 mt-8">
 
             {/* Experience 1 */}
             <div className="grid md:grid-cols-[80px_1fr] gap-6">
@@ -114,6 +168,11 @@ export default function IbizaGuidePage() {
                 <h3 className={`${cormorant.className} text-2xl md:text-3xl font-light mb-4`} style={{ color: DARK }}>
                   Explore Hidden Coves by Speedboat
                 </h3>
+                <GuideImage
+                  src="/images/guides/ibiza/ibiza-turquoise-cove.jpg"
+                  alt="Turquoise Mediterranean waters with dramatic cliffs framing secluded beach cove"
+                  caption="One of Ibiza's many calas — accessible only from the sea"
+                />
                 <p className="text-sm text-[#0A0A0A]/60 leading-relaxed mb-4">
                   Ibiza's coastline conceals more than a hundred calas — small, sheltered coves accessible only by sea.
                   Most visitors never find them. We do. A private speedboat departs in the morning and charts a course
@@ -137,6 +196,11 @@ export default function IbizaGuidePage() {
                 <h3 className={`${cormorant.className} text-2xl md:text-3xl font-light mb-4`} style={{ color: DARK }}>
                   Private Chef Dining in Villa
                 </h3>
+                <GuideImage
+                  src="/images/guides/ibiza/ibiza-gourmet-dining.jpg"
+                  alt="Gourmet Mediterranean seafood plating on luxury villa terrace"
+                  caption="A private chef dinner — the best table on the island is often your own"
+                />
                 <p className="text-sm text-[#0A0A0A]/60 leading-relaxed mb-4">
                   Some nights, the best table on the island is yours. We arrange a private chef —
                   Ibiza has extraordinary culinary talent working quietly away from the restaurant circuit —
@@ -161,6 +225,11 @@ export default function IbizaGuidePage() {
                 <h3 className={`${cormorant.className} text-2xl md:text-3xl font-light mb-4`} style={{ color: DARK }}>
                   VIP Club Access & After-Dark Ibiza
                 </h3>
+                <GuideImage
+                  src="/images/guides/ibiza/ibiza-vip-nightclub.jpg"
+                  alt="Elegant luxury nightclub interior with sophisticated bar lounge"
+                  caption="Ibiza's clubs at their best — when you know the right people"
+                />
                 <p className="text-sm text-[#0A0A0A]/60 leading-relaxed mb-4">
                   If you want to experience Ibiza's legendary nightlife without the queues, the ordinary tables
                   or the indignity of a €40 gin and tonic in a crowded bar, we handle it properly.
@@ -185,6 +254,11 @@ export default function IbizaGuidePage() {
                 <h3 className={`${cormorant.className} text-2xl md:text-3xl font-light mb-4`} style={{ color: DARK }}>
                   Helicopter Tour of the Island
                 </h3>
+                <GuideImage
+                  src="/images/guides/ibiza/ibiza-aerial-helicopter.jpg"
+                  alt="Aerial view of Ibiza coastline and Es Vedrà island from helicopter"
+                  caption="Es Vedrà and the southwest coast from a private helicopter"
+                />
                 <p className="text-sm text-[#0A0A0A]/60 leading-relaxed mb-4">
                   Ibiza from the air is a revelation — the patchwork of white salt flats at Ses Salines,
                   the dense pine forests of the interior, the irregular turquoise of the northern calas,
@@ -213,6 +287,11 @@ export default function IbizaGuidePage() {
           <h2 className={`${cormorant.className} text-4xl md:text-6xl font-light mb-6`} style={{ color: DARK }}>
             Where to Stay in Ibiza
           </h2>
+          <GuideImage
+            src="/images/guides/ibiza/ibiza-villa-pool.jpg"
+            alt="Luxury clifftop villa with infinity pool overlooking Mediterranean Sea"
+            caption="A clifftop infinity pool — the private villas we recommend are chosen for views like this"
+          />
           <p className="text-sm text-[#0A0A0A]/60 leading-relaxed mb-12 max-w-2xl">
             The right villa makes everything else easier. These are properties we know personally —
             places where the staff understand discretion, the pools are genuinely private and the views
@@ -242,6 +321,11 @@ export default function IbizaGuidePage() {
           <h2 className={`${cormorant.className} text-4xl md:text-6xl font-light mb-6`} style={{ color: DARK }}>
             The Finest Beaches in Ibiza
           </h2>
+          <GuideImage
+            src="/images/guides/ibiza/ibiza-pristine-beach.jpg"
+            alt="Pristine turquoise beach with golden sand and crystal clear Mediterranean waters"
+            caption="Ibiza's coastline at its finest — clear water, fine sand, no crowds"
+          />
           <p className="text-sm text-[#0A0A0A]/60 leading-relaxed mb-12 max-w-2xl">
             Ibiza has over fifty beaches. These four stand apart — each different in character,
             all exceptional in their own way.
@@ -288,6 +372,11 @@ export default function IbizaGuidePage() {
           <h2 className={`${cormorant.className} text-4xl md:text-6xl font-light mb-6`} style={{ color: DARK }}>
             Culinary Excellence in Ibiza
           </h2>
+          <GuideImage
+            src="/images/guides/ibiza/ibiza-beachclub-dining.jpg"
+            alt="Bohemian beach club dining with sunset Mediterranean views"
+            caption="Dining in Ibiza at its best — the sea as backdrop, the evening unhurried"
+          />
           <p className="text-sm text-[#0A0A0A]/60 leading-relaxed mb-12 max-w-2xl">
             Ibiza's dining scene has moved well beyond party food. These restaurants represent the serious end
             of the island's kitchen — places where the cooking matches the setting.
