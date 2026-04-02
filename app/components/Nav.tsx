@@ -49,6 +49,25 @@ export default function Nav() {
                 </a>
               </div>
             </div>
+            <div className="relative group">
+              <button className="text-[11px] uppercase tracking-[0.1em] text-white/70 hover:text-white transition-colors duration-300 flex items-center gap-1">
+                Guides
+                <svg className="w-2.5 h-2.5 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div className="absolute top-full left-0 mt-3 w-48 bg-[#0A0A0A] border border-white/10 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <a href="/guides/ibiza" className="block px-5 py-2.5 text-[11px] uppercase tracking-[0.08em] text-white/60 hover:text-white hover:bg-white/5 transition-colors">
+                  Ibiza Guide
+                </a>
+                <a href="/guides/formentera" className="block px-5 py-2.5 text-[11px] uppercase tracking-[0.08em] text-white/60 hover:text-white hover:bg-white/5 transition-colors">
+                  Formentera Guide
+                </a>
+                <a href="/guides/mallorca" className="block px-5 py-2.5 text-[11px] uppercase tracking-[0.08em] text-white/60 hover:text-white hover:bg-white/5 transition-colors">
+                  Mallorca Guide
+                </a>
+              </div>
+            </div>
             {[
               { href: "/villas", label: "Villas" },
               { href: "/services", label: "Services" },
@@ -99,6 +118,9 @@ export default function Nav() {
             {[
               { href: "/fleet", label: "Hütter Yachts" },
               { href: "/fleet/all", label: "Full Fleet" },
+              { href: "/guides/ibiza", label: "Ibiza Guide" },
+              { href: "/guides/formentera", label: "Formentera Guide" },
+              { href: "/guides/mallorca", label: "Mallorca Guide" },
               { href: "/villas", label: "Villas" },
               { href: "/services", label: "Services" },
               { href: "/contact", label: "Contact" },
