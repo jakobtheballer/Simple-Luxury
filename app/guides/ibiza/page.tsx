@@ -213,7 +213,7 @@ export default function IbizaGuidePage() {
                   VIP Club Access & After-Dark Ibiza
                 </h3>
                 <GuideImage
-                  src="/images/guides/ibiza/ibiza-vip-nightclub.jpg"
+                  src="/images/guides/VIP Club Access & After-Dark Ibiza.jpg"
                   alt="Elegant luxury nightclub interior with sophisticated bar lounge"
                   caption="Ibiza's clubs at their best — when you know the right people"
                 />
