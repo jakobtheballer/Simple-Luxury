@@ -1036,8 +1036,8 @@ export const fleet: Yacht[] = [
     overnightGuests: 2,
     cabins: 1,
     crew: 1,
-    dayPrice: 0,
-    displayPrice: "Price on request",
+    dayPrice: 2000,
+    displayPrice: "FROM €2,000/day",
     image: "/images/fleet/de-antonio-42/1.webp",
     images: [
       "/images/fleet/de-antonio-42/1.webp",
@@ -1073,7 +1073,7 @@ export const fleet: Yacht[] = [
       { label: "Skipper",    value: "Professional (included)" },
     ],
     pricing: [
-      { season: "Day Charter", months: "On request", price: "Price on request" },
+      { season: "Day Charter", months: "Contact for availability", price: "From €2,000/day" },
     ],
     included: [
       "VAT",
