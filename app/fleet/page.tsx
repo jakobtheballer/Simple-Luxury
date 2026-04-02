@@ -120,7 +120,7 @@ export default function FleetPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 bg-white">
             <div className="relative overflow-hidden" style={{ aspectRatio: "16/9" }}>
               <Image
-                src="/images/De Antonio 43 tot suma2/1.webp"
+                src="/images/fleet/de-antonio-42/1.webp"
                 alt="De Antonio 42 Tot Suma modern open yacht moored in Marina Botafoch, Ibiza"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -176,7 +176,7 @@ export default function FleetPage() {
             </div>
             <div className="relative overflow-hidden" style={{ aspectRatio: "16/9" }}>
               <Image
-                src="/images/De Antonio 43 tot suma2/2.webp"
+                src="/images/fleet/de-antonio-42/2.webp"
                 alt="Spacious deck lounge with comfortable seating and sunbeds, perfect for relaxing Mediterranean cruising"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -189,7 +189,7 @@ export default function FleetPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 bg-white">
             <div className="relative overflow-hidden" style={{ aspectRatio: "16/9" }}>
               <Image
-                src="/images/De Antonio 43 tot suma2/3.webp"
+                src="/images/fleet/de-antonio-42/3.webp"
                 alt="Modern interior cabin with double bed, air conditioning and contemporary furnishings"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -262,7 +262,7 @@ export default function FleetPage() {
             </div>
             <div className="relative overflow-hidden" style={{ aspectRatio: "16/9" }}>
               <Image
-                src="/images/De Antonio 43 tot suma2/4.webp"
+                src="/images/fleet/de-antonio-42/4.webp"
                 alt="Swimming and snorkeling from yacht with turquoise Mediterranean waters and snorkel equipment included"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
