@@ -31,6 +31,12 @@ export default function ContactPage() {
               </a>
             </div>
             <div>
+              <p className="text-[9px] uppercase tracking-[0.2em] text-white/25 mb-1">Email</p>
+              <a href="mailto:booking@simpleluxuryservice.de" className="text-sm text-white/60 hover:text-white transition-colors duration-300">
+                booking@simpleluxuryservice.de
+              </a>
+            </div>
+            <div>
               <p className="text-[9px] uppercase tracking-[0.2em] text-white/25 mb-1">Locations</p>
               <p className="text-sm text-white/40">Mallorca · Ibiza · Formentera</p>
             </div>
