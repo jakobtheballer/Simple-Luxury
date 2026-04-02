@@ -24,8 +24,8 @@ export default function PrivacyPage() {
           <div>
             <h2 className="text-[10px] uppercase tracking-[0.2em] text-[#0A0A0A]/40 mb-3">1. Data Controller</h2>
             <p className="text-[#0A0A0A] font-medium mb-1">Simple Luxury Services</p>
-            <p>[Street and number]</p>
-            <p>[Postal code, City], Germany</p>
+            <p>Moltkestraße 39</p>
+            <p>69120 Heidelberg, Germany</p>
             <p className="mt-2">Email: <a href="mailto:booking@simpleluxuryservice.de" className="text-[#0A0A0A] hover:text-[#C9A96E] transition-colors duration-300">booking@simpleluxuryservice.de</a></p>
             <p>Phone: <a href="tel:+4915738248355" className="text-[#0A0A0A] hover:text-[#C9A96E] transition-colors duration-300">+49 157 38 24 8355</a></p>
           </div>

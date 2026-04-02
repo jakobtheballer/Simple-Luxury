@@ -24,8 +24,8 @@ export default function DatenschutzPage() {
           <div>
             <h2 className="text-[10px] uppercase tracking-[0.2em] text-[#0A0A0A]/40 mb-3">1. Verantwortlicher</h2>
             <p className="text-[#0A0A0A] font-medium mb-1">Simple Luxury Services</p>
-            <p>[Straße und Hausnummer]</p>
-            <p>[PLZ Ort], Deutschland</p>
+            <p>Moltkestraße 39</p>
+            <p>69120 Heidelberg, Deutschland</p>
             <p className="mt-2">E-Mail: <a href="mailto:booking@simpleluxuryservice.de" className="text-[#0A0A0A] hover:text-[#C9A96E] transition-colors duration-300">booking@simpleluxuryservice.de</a></p>
             <p>Telefon: <a href="tel:+4915738248355" className="text-[#0A0A0A] hover:text-[#C9A96E] transition-colors duration-300">+49 157 38 24 8355</a></p>
           </div>
