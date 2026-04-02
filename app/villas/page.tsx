@@ -1,49 +1,26 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Private Villas – Mallorca, Ibiza & Formentera | Simple Luxury",
-  description: "Exclusive villa rentals on the Balearic Islands. Private pools, sea views, dedicated staff. Curated selection for discerning guests.",
+  title: "Luxury Villas in the Balearics – Ibiza, Mallorca & Formentera | Simple Luxury",
+  description: "Exclusive private villa rentals across Ibiza, Mallorca and Formentera. Handpicked for luxury, privacy and elegance. Accommodating groups of 4–12 guests.",
   alternates: { canonical: "https://simpleluxuryservice.de/villas" },
   openGraph: {
-    title: "Exclusive Private Villas | Simple Luxury",
-    description: "Luxury villa rentals in Mallorca, Ibiza and Formentera with private pools, sea views and dedicated staff.",
+    title: "Luxury Villas in the Balearics | Simple Luxury",
+    description: "Curated private villas in Ibiza, Mallorca and Formentera — clifftop estates, bohemian sanctuaries, and everything in between.",
     url: "https://simpleluxuryservice.de/villas",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Private Villas Ibiza Mallorca – Simple Luxury" }],
   },
 };
 
 const villas = [
-  {
-    image: "/images/Hero.jpg",
-    name: "Villa Ibiza Sunset",
-    location: "Ibiza",
-    bedrooms: 4,
-    capacity: 8,
-    price: "€2,500",
-    amenities: ["Infinity Pool", "Sea View Terrace", "Gourmet Kitchen", "Beach Access"],
-    availableInfo: "Available year-round. Minimum 3 nights.",
-  },
-  {
-    image: "/images/Hero.jpg",
-    name: "Villa Mallorca Cove",
-    location: "Mallorca",
-    bedrooms: 6,
-    capacity: 12,
-    price: "€1,800",
-    amenities: ["Olympic Pool", "Multi-Level Terrace", "Wine Cellar", "Spa"],
-    availableInfo: "Available year-round. Minimum 5 nights.",
-  },
-  {
-    image: "/images/Hero.jpg",
-    name: "Villa Formentera",
-    location: "Formentera",
-    bedrooms: 8,
-    capacity: 16,
-    price: "€3,200",
-    amenities: ["Private Beach", "Infinity Pool", "Cinema Room", "Wellness Center"],
-    availableInfo: "Available May–October. Minimum 7 nights.",
-  },
+  { name: "Villa Mestre",      location: "Ibiza" },
+  { name: "Villa Tom",         location: "Ibiza" },
+  { name: "Villa Pep Luis",    location: "Ibiza" },
+  { name: "Villa Nieves",      location: "Formentera" },
+  { name: "The Daniel Dream",  location: "Mallorca" },
+  { name: "Casa Pepe",         location: "Formentera" },
+  { name: "Bella Vista",       location: "Mallorca" },
+  { name: "Teguis Mansion",    location: "Mallorca" },
 ];
 
 export default function VillasPage() {
@@ -54,73 +31,72 @@ export default function VillasPage() {
       <section className="py-14 md:py-28 px-6 md:px-10 border-b border-[#0A0A0A]/8" style={{ backgroundColor: "#F5F2EB" }}>
         <div className="max-w-[1200px] mx-auto">
           <p className="text-[10px] uppercase tracking-[0.25em] text-[#C9A96E] mb-6">Private Residences</p>
-          <h1 className="text-3xl sm:text-5xl md:text-7xl text-[#0A0A0A] max-w-lg" style={{ fontFamily: "var(--font-playfair)", fontWeight: 400 }}>
-            Luxury Villas
+          <h1 className="text-3xl sm:text-5xl md:text-7xl text-[#0A0A0A] max-w-2xl" style={{ fontFamily: "var(--font-playfair)", fontWeight: 400 }}>
+            Luxury Villas in the Balearics
           </h1>
-          <p className="text-sm text-[#0A0A0A]/50 mt-6 max-w-md leading-relaxed">
-            Handpicked residences across Ibiza, Mallorca and Formentera — each with private pools, sea views, and dedicated concierge.
-          </p>
         </div>
       </section>
 
-      {/* VILLAS */}
-      <section className="py-16 md:py-24">
-        <div className="max-w-[1200px] mx-auto md:px-10 space-y-px bg-[#0A0A0A]/8">
-          {villas.map((villa, i) => (
-            <div key={villa.name} className="grid grid-cols-1 lg:grid-cols-2 bg-white">
-              {/* Image */}
-              <div className={`relative overflow-hidden ${i % 2 === 1 ? "lg:order-2" : ""}`} style={{ aspectRatio: "4/3", minHeight: "300px" }}>
-                <Image
-                  src={villa.image}
-                  alt={villa.name}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
-                  loading="lazy"
-                />
-              </div>
+      {/* INTRO + PROPERTIES */}
+      <section className="py-16 md:py-28 px-6 md:px-10">
+        <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-16 md:gap-24">
 
-              {/* Info */}
-              <div className={`flex flex-col justify-center py-8 px-6 md:px-14 ${i % 2 === 1 ? "lg:order-1" : ""}`}>
-                <p className="text-[9px] uppercase tracking-[0.25em] text-[#C9A96E] mb-4">{villa.location}</p>
-                <h2 className="text-3xl md:text-4xl mb-2 text-[#0A0A0A]" style={{ fontFamily: "var(--font-playfair)", fontWeight: 400 }}>
-                  {villa.name}
-                </h2>
-                <p className="text-sm text-[#0A0A0A]/40 mb-8">{villa.availableInfo}</p>
+          {/* Left: text */}
+          <div>
+            <p className="text-base text-[#0A0A0A]/70 leading-relaxed mb-6">
+              We offer a curated collection of exclusive private villas across Ibiza, Mallorca, and Formentera. Each property is handpicked for luxury, privacy, and elegance.
+            </p>
+            <p className="text-base text-[#0A0A0A]/70 leading-relaxed mb-6">
+              From clifftop Mediterranean estates with sweeping sea views to bohemian sanctuaries tucked into the island interior, our villas accommodate groups of 4–12 guests. Every property is selected personally — not for its listing, but for the experience it delivers.
+            </p>
+            <p className="text-base text-[#0A0A0A]/70 leading-relaxed mb-6">
+              All villas come with full concierge support. We handle transfers, provisioning, private chefs, boat hire, restaurant reservations and anything else that makes the difference between a good holiday and a genuinely exceptional one.
+            </p>
+            <p className="text-base text-[#0A0A0A]/70 leading-relaxed mb-10">
+              For personalised information, availability, and booking, contact our concierge team at{" "}
+              <a
+                href="mailto:booking@simpleluxuryservice.de"
+                className="underline hover:text-[#C9A96E] transition-colors duration-300"
+                style={{ color: "#0A0A0A" }}
+              >
+                booking@simpleluxuryservice.de
+              </a>
+            </p>
+            <a
+              href="/contact"
+              className="inline-block text-center text-[11px] uppercase tracking-[0.15em] px-10 py-4 text-[#0A0A0A] font-medium hover:opacity-80 transition-opacity duration-300"
+              style={{ backgroundColor: "#C9A96E" }}
+            >
+              Contact Us for Villa Details
+            </a>
+          </div>
 
-                {/* Specs */}
-                <div className="flex gap-8 mb-8 pb-8 border-b border-[#0A0A0A]/8">
-                  {[
-                    { label: "Bedrooms", value: villa.bedrooms },
-                    { label: "Guests", value: villa.capacity },
-                    { label: "From / night", value: villa.price },
-                  ].map(({ label, value }) => (
-                    <div key={label}>
-                      <p className="text-[9px] uppercase tracking-[0.15em] text-[#0A0A0A]/30 mb-1">{label}</p>
-                      <p className="text-sm font-medium text-[#0A0A0A]">{value}</p>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Amenities */}
-                <div className="space-y-2.5 mb-10">
-                  {villa.amenities.map((a) => (
-                    <div key={a} className="flex items-center gap-3 text-sm text-[#0A0A0A]/60">
-                      <span className="w-px h-4 bg-[#C9A96E] flex-shrink-0" />
-                      {a}
-                    </div>
-                  ))}
-                </div>
-
-                <a
-                  href="https://wa.me/4915738248355"
-                  className="sm:self-start block w-full sm:w-auto text-center text-[11px] uppercase tracking-[0.1em] border border-[#0A0A0A]/30 text-[#0A0A0A] px-8 py-3.5 hover:bg-[#0A0A0A] hover:text-white transition-all duration-300"
+          {/* Right: property list */}
+          <div>
+            <p className="text-[10px] uppercase tracking-[0.25em] text-[#C9A96E] mb-8">Available Properties</p>
+            <div className="space-y-px">
+              {villas.map((v) => (
+                <div
+                  key={v.name}
+                  className="flex items-center justify-between py-5 border-b border-[#0A0A0A]/8"
                 >
-                  Enquire About This Villa →
-                </a>
-              </div>
+                  <h2
+                    className="text-lg text-[#0A0A0A]"
+                    style={{ fontFamily: "var(--font-playfair)", fontWeight: 400 }}
+                  >
+                    {v.name}
+                  </h2>
+                  <span className="text-[10px] uppercase tracking-[0.15em] text-[#0A0A0A]/40">
+                    {v.location}
+                  </span>
+                </div>
+              ))}
             </div>
-          ))}
+            <p className="text-xs text-[#0A0A0A]/40 mt-6 leading-relaxed">
+              Additional properties available on request. Our portfolio changes seasonally — speak to our concierge for current availability.
+            </p>
+          </div>
+
         </div>
       </section>
 
@@ -133,14 +109,24 @@ export default function VillasPage() {
           <p className="text-sm text-white/40 mb-10">
             Our concierge team has access to an exclusive portfolio across the Balearic Islands.
           </p>
-          <a
-            href="https://wa.me/4915738248355"
-            className="block w-full sm:w-auto sm:inline-block text-center text-[11px] uppercase tracking-[0.15em] border border-white/30 text-white px-10 py-4 hover:border-white hover:bg-white hover:text-[#0A0A0A] transition-all duration-300"
-          >
-            Speak to Concierge
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/contact"
+              className="text-center text-[11px] uppercase tracking-[0.15em] px-10 py-4 text-[#0A0A0A] font-medium hover:opacity-80 transition-opacity duration-300"
+              style={{ backgroundColor: "#C9A96E" }}
+            >
+              Contact Us for Villa Details
+            </a>
+            <a
+              href="https://wa.me/4915738248355"
+              className="text-center text-[11px] uppercase tracking-[0.15em] border border-white/30 text-white px-10 py-4 hover:border-white hover:bg-white hover:text-[#0A0A0A] transition-all duration-300"
+            >
+              WhatsApp
+            </a>
+          </div>
         </div>
       </section>
+
     </main>
   );
 }
