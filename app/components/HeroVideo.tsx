@@ -27,7 +27,7 @@ export default function HeroVideo() {
         className="hidden md:block absolute inset-0"
         style={{ width: "100%", height: "100%", objectFit: "cover" }}
       >
-        <source src="/videos/desktop video Kopie.mov" type="video/quicktime" />
+        <source src="/videos/desktop-hero.mp4" type="video/mp4" />
       </video>
 
       {/* OVERLAY */}
