@@ -23,9 +23,10 @@ export default function ImprintPage() {
 
           <div>
             <h2 className="text-[10px] uppercase tracking-[0.2em] text-[#0A0A0A]/40 mb-3">Information pursuant to § 5 TMG (German Telemedia Act)</h2>
-            <p className="text-[#0A0A0A] font-medium mb-1">Simple Luxury Services</p>
-            <p>[Street and number]</p>
-            <p>[Postal code, City]</p>
+            <p className="text-[#0A0A0A] font-medium mb-1">Hütter & Streich Adventures GbR</p>
+            <p className="text-[#0A0A0A] font-medium mb-1">Simple Luxury</p>
+            <p>Moltkestraße 39</p>
+            <p>69120 Heidelberg</p>
             <p>Germany</p>
           </div>
 
@@ -37,13 +38,13 @@ export default function ImprintPage() {
 
           <div>
             <h2 className="text-[10px] uppercase tracking-[0.2em] text-[#0A0A0A]/40 mb-3">VAT Identification Number</h2>
-            <p>VAT identification number pursuant to § 27a of the German Value Added Tax Act: [to be entered]</p>
+            <p>VAT identification number pursuant to § 27a of the German Value Added Tax Act: to be added</p>
           </div>
 
           <div>
             <h2 className="text-[10px] uppercase tracking-[0.2em] text-[#0A0A0A]/40 mb-3">Person Responsible for Content (§ 55 para. 2 RStV)</h2>
-            <p>[First and last name]</p>
-            <p>[Address as above]</p>
+            <p>Moritz Hütter & Jakob Streich</p>
+            <p>Moltkestraße 39, 69120 Heidelberg</p>
           </div>
 
           <div>

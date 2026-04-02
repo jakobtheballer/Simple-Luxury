@@ -23,9 +23,10 @@ export default function ImpressumPage() {
 
           <div>
             <h2 className="text-[10px] uppercase tracking-[0.2em] text-[#0A0A0A]/40 mb-3">Angaben gemäß § 5 TMG</h2>
-            <p className="text-[#0A0A0A] font-medium mb-1">Simple Luxury Services</p>
-            <p>[Straße und Hausnummer]</p>
-            <p>[PLZ Ort]</p>
+            <p className="text-[#0A0A0A] font-medium mb-1">Hütter & Streich Adventures GbR</p>
+            <p className="text-[#0A0A0A] font-medium mb-1">Simple Luxury</p>
+            <p>Moltkestraße 39</p>
+            <p>69120 Heidelberg</p>
             <p>Deutschland</p>
           </div>
 
@@ -37,13 +38,13 @@ export default function ImpressumPage() {
 
           <div>
             <h2 className="text-[10px] uppercase tracking-[0.2em] text-[#0A0A0A]/40 mb-3">Umsatzsteuer-ID</h2>
-            <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: [USt-IdNr. eintragen]</p>
+            <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: wird nachgereicht</p>
           </div>
 
           <div>
             <h2 className="text-[10px] uppercase tracking-[0.2em] text-[#0A0A0A]/40 mb-3">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
-            <p>[Vor- und Nachname]</p>
-            <p>[Straße und Hausnummer, PLZ Ort]</p>
+            <p>Moritz Hütter & Jakob Streich</p>
+            <p>Moltkestraße 39, 69120 Heidelberg</p>
           </div>
 
           <div>
