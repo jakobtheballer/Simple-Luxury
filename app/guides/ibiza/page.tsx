@@ -114,17 +114,11 @@ export default function IbizaGuidePage() {
       <section id="experiences" className="py-16 md:py-28 px-6 md:px-10">
         <div className="max-w-4xl mx-auto">
           <p className="text-[10px] uppercase tracking-[0.25em] mb-4" style={{ color: GOLD }}>Curated Experiences</p>
-          <h2 className={`${cormorant.className} text-4xl md:text-6xl font-light mb-8`} style={{ color: DARK }}>
+          <h2 className={`${cormorant.className} text-4xl md:text-6xl font-light mb-14`} style={{ color: DARK }}>
             Top 5 Exclusive Experiences
           </h2>
 
-          <GuideImage
-            src="/images/guides/ibiza/ibiza-yacht-sailing.jpg"
-            alt="Professional crew sailing luxury yacht with sunset drinks on deck"
-            caption="Aboard a private charter — Ibiza's west coast from the water"
-          />
-
-          <div className="space-y-16 mt-8">
+          <div className="space-y-16">
 
             {/* Experience 1 */}
             <div className="grid md:grid-cols-[80px_1fr] gap-6">
@@ -133,6 +127,11 @@ export default function IbizaGuidePage() {
                 <h3 className={`${cormorant.className} text-2xl md:text-3xl font-light mb-4`} style={{ color: DARK }}>
                   Private Yacht Charter at Sunset
                 </h3>
+                <GuideImage
+                  src="/images/guides/ibiza/ibiza-yacht-sailing.jpg"
+                  alt="Professional crew sailing luxury yacht with sunset drinks on deck"
+                  caption="Aboard a private charter — Ibiza's west coast from the water"
+                />
                 <p className="text-sm text-[#0A0A0A]/60 leading-relaxed mb-4">
                   There is no better way to experience Ibiza than from the water as the sun drops behind Es Vedrà.
                   Aboard one of our <a href="/fleet" className="underline hover:opacity-70 transition-opacity" style={{ color: DARK }}>private charter yachts</a>,
