@@ -128,7 +128,7 @@ export default function IbizaGuidePage() {
                   Private Yacht Charter at Sunset
                 </h3>
                 <GuideImage
-                  src="/images/guides/ibiza/ibiza-yacht-sailing.jpg"
+                  src="/images/guides/bild 1.jpg"
                   alt="Professional crew sailing luxury yacht with sunset drinks on deck"
                   caption="Aboard a private charter — Ibiza's west coast from the water"
                 />
