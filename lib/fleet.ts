@@ -351,9 +351,9 @@ export const fleet: Yacht[] = [
     crew: 4,
     dayPrice: 12143, // €85,000/week ÷ 7 for sort/filter
     displayPrice: "FROM €85,000/week",
-    image: "/images/blue infinity/1",
+    image: "/images/blue infinity/1.webp",
     images: [
-      "/images/blue infinity/1",
+      "/images/blue infinity/1.webp",
       "/images/blue infinity/2.webp",
       "/images/blue infinity/3.webp",
       "/images/blue infinity/4.webp",
