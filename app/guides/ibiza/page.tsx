@@ -84,18 +84,6 @@ export default function IbizaGuidePage() {
         </div>
       </section>
 
-      {/* HERO IMAGE */}
-      <section className="px-6 md:px-10 -mt-1" style={{ backgroundColor: DARK }}>
-        <div className="max-w-4xl mx-auto pb-16 md:pb-20">
-          <GuideImage
-            src="/images/guides/ibiza/ibiza-hero-yacht-sunset.jpg"
-            alt="Luxury superyacht sailing at sunset in Ibiza with turquoise Mediterranean waters"
-            caption="The west coast of Ibiza, viewed from the deck of a private charter yacht at golden hour"
-            priority
-          />
-        </div>
-      </section>
-
       {/* TABLE OF CONTENTS */}
       <section className="py-10 px-6 md:px-10 border-b border-[#0A0A0A]/8" style={{ backgroundColor: CREAM }}>
         <div className="max-w-4xl mx-auto">
