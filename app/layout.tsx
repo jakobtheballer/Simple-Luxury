@@ -68,9 +68,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               {/* Legal + contact */}
               <div className="flex flex-wrap gap-x-6 gap-y-2">
                 {[
-                  { href: "/datenschutz", label: "Datenschutz" },
                   { href: "/impressum", label: "Impressum" },
-                  { href: "/agb", label: "AGB" },
+                  { href: "/datenschutz", label: "Datenschutz" },
+                  { href: "/legal/imprint", label: "Legal Notice" },
+                  { href: "/legal/privacy", label: "Privacy Policy" },
                 ].map(({ href, label }) => (
                   <a key={href} href={href} className="text-xs text-white/30 hover:text-white/60 transition-colors duration-300">
                     {label}
