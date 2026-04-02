@@ -184,7 +184,7 @@ export default function IbizaGuidePage() {
                   Private Chef Dining in Villa
                 </h3>
                 <GuideImage
-                  src="/images/guides/ibiza/ibiza-gourmet-dining.jpg"
+                  src="/images/guides/cehf villa .jpg"
                   alt="Gourmet Mediterranean seafood plating on luxury villa terrace"
                   caption="A private chef dinner — the best table on the island is often your own"
                 />
