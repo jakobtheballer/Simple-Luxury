@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [guidesOpen, setGuidesOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -118,9 +119,54 @@ export default function Nav() {
             {[
               { href: "/fleet", label: "Hütter Yachts" },
               { href: "/fleet/all", label: "Full Fleet" },
-              { href: "/guides/ibiza", label: "Ibiza Guide" },
-              { href: "/guides/formentera", label: "Formentera Guide" },
-              { href: "/guides/mallorca", label: "Mallorca Guide" },
+            ].map(({ href, label }) => (
+              <a
+                key={href}
+                href={href}
+                onClick={() => setOpen(false)}
+                className="text-2xl tracking-[0.1em] text-white/70 hover:text-white transition-colors duration-300"
+                style={{ fontFamily: "var(--font-playfair)" }}
+              >
+                {label}
+              </a>
+            ))}
+
+            {/* Guides accordion */}
+            <div className="flex flex-col items-center gap-4">
+              <button
+                onClick={() => setGuidesOpen((v) => !v)}
+                className="text-2xl tracking-[0.1em] text-white/70 hover:text-white transition-colors duration-300 flex items-center gap-3"
+                style={{ fontFamily: "var(--font-playfair)" }}
+              >
+                Guides
+                <svg
+                  className={`w-4 h-4 opacity-50 transition-transform duration-300 ${guidesOpen ? "rotate-180" : ""}`}
+                  fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {guidesOpen && (
+                <div className="flex flex-col items-center gap-4">
+                  {[
+                    { href: "/guides/ibiza", label: "Ibiza" },
+                    { href: "/guides/formentera", label: "Formentera" },
+                    { href: "/guides/mallorca", label: "Mallorca" },
+                  ].map(({ href, label }) => (
+                    <a
+                      key={href}
+                      href={href}
+                      onClick={() => setOpen(false)}
+                      className="text-base tracking-[0.15em] text-white/40 hover:text-white transition-colors duration-300 uppercase"
+                    >
+                      → {label}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {[
               { href: "/villas", label: "Villas" },
               { href: "/services", label: "Services" },
               { href: "/contact", label: "Contact" },
