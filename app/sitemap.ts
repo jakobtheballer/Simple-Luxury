@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import { fleet } from "@/lib/fleet";
 
-const BASE_URL = "https://simpleluxuryservice.de";
+const BASE_URL = "https://www.simpleluxuryservice.de";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const yachtRoutes = fleet.map((y) => ({
@@ -42,6 +42,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/guides`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/guides/ibiza`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
+      url: `${BASE_URL}/guides/formentera`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
+      url: `${BASE_URL}/guides/mallorca`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.75,
     },
     {
       url: `${BASE_URL}/contact`,
