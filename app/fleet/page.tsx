@@ -3,8 +3,8 @@ import Image from "next/image";
 import { fleet } from "@/lib/fleet";
 
 export const metadata: Metadata = {
-  title: "Hütter Yachts – Dr. No, Moneypenny, Goldfinger | Simple Luxury",
-  description: "Exclusive day charters and overnight stays aboard Hütter power catamarans in Mallorca and Ibiza. Book your private charter experience.",
+  title: "Yacht Charter Ibiza & Mallorca | Luxury Catamarans",
+  description: "Premium yacht charters in the Balearic Islands. Modern catamarans for day trips and overnight voyages. Book your private yacht now.",
   alternates: { canonical: "https://simpleluxuryservice.de/fleet" },
   openGraph: {
     title: "Hütter Yachts – Exclusive Charter Fleet | Simple Luxury",

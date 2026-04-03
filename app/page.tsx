@@ -5,8 +5,8 @@ import HeroVideo from "./components/HeroVideo";
 import { fleet } from "@/lib/fleet";
 
 export const metadata: Metadata = {
-  title: "Simple Luxury | Premium Concierge & Yacht Charter Ibiza Mallorca",
-  description: "Luxury concierge services in Ibiza, Mallorca & Formentera. Private yacht charters, exclusive villas, fine dining, and bespoke lifestyle experiences for discerning clients.",
+  title: "Luxury Yacht Charters & Private Villas in Ibiza & Mallorca",
+  description: "Book exclusive yacht charters and luxury villas in the Balearic Islands. Premium concierge, private pools, sea views. Plan your Mediterranean escape now.",
   alternates: { canonical: "https://simpleluxuryservice.de" },
   openGraph: {
     title: "Simple Luxury | Exclusive Balearic Experiences",

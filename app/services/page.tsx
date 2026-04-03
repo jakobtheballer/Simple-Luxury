@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Services – Curated Luxury Experiences | Simple Luxury",
-  description: "Yacht charters, accommodation, fine dining, VIP transportation and lifestyle management across Mallorca, Ibiza and Formentera.",
+  title: "Luxury Concierge Services | Transfers, Dining, VIP Access",
+  description: "24/7 concierge service for yacht charters and villa rentals. Airport transfers, restaurant reservations, VIP access, and more.",
 };
 
 const WA = "https://wa.me/4915738248355";

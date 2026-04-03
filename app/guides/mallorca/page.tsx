@@ -8,9 +8,8 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Mallorca Luxury Guide 2025 – Best Experiences, Beaches & Villas | Simple Luxury",
-  description:
-    "The definitive luxury guide to Mallorca. Private yacht charters along the Tramuntana coast, Michelin-starred dining in Palma, exclusive villas and the island's finest beaches — curated by Simple Luxury.",
+  title: "Mallorca Travel Guide | Beaches, Wine, Culture & Dining",
+  description: "Explore Mallorca's top attractions, beaches, wineries, and restaurants. Complete travel guide for luxury experiences.",
   alternates: { canonical: "https://simpleluxuryservice.de/guides/mallorca" },
   openGraph: {
     title: "Mallorca: Mediterranean Majesty & Luxury | Simple Luxury",

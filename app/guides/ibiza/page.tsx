@@ -9,9 +9,8 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Ibiza Luxury Guide 2025 – Best Experiences, Beaches & Villas | Simple Luxury",
-  description:
-    "The definitive luxury guide to Ibiza. Discover hidden coves, private yacht charters, Michelin-starred dining, exclusive villas and the island's best beaches — curated by Simple Luxury.",
+  title: "Ibiza Travel Guide | Beaches, Restaurants, Nightlife",
+  description: "Complete Ibiza travel guide with insider tips on beaches, restaurants, clubs, and hidden gems. Perfect for luxury travelers.",
   alternates: { canonical: "https://simpleluxuryservice.de/guides/ibiza" },
   openGraph: {
     title: "Ibiza: The Ultimate Luxury Guide | Simple Luxury",

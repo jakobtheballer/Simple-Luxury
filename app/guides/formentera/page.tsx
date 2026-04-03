@@ -8,9 +8,8 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Formentera Luxury Guide 2025 – Best Beaches, Villas & Experiences | Simple Luxury",
-  description:
-    "The definitive luxury guide to Formentera. Discover Ses Illetes beach, private boat day trips from Ibiza, wellness retreats, and the island's most serene villas — curated by Simple Luxury.",
+  title: "Formentera Travel Guide | Beaches & Hidden Gems",
+  description: "Discover Formentera's best beaches, restaurants, and secret spots. Your complete guide to this Mediterranean paradise.",
   alternates: { canonical: "https://simpleluxuryservice.de/guides/formentera" },
   openGraph: {
     title: "Formentera: Escape to Mediterranean Serenity | Simple Luxury",

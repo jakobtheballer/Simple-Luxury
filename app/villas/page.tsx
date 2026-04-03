@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Luxury Villas in the Balearics – Ibiza, Mallorca & Formentera | Simple Luxury",
-  description: "Exclusive private villa rentals across Ibiza, Mallorca and Formentera. Handpicked for luxury, privacy and elegance. Accommodating groups of 4–12 guests.",
+  title: "Luxury Villas Ibiza & Mallorca | Private Pools & Sea Views",
+  description: "Handpicked luxury villas in Ibiza and Mallorca. 4–6 bedrooms, private pools, sea views, 24/7 concierge. Book your exclusive villa today.",
   alternates: { canonical: "https://simpleluxuryservice.de/villas" },
   openGraph: {
     title: "Luxury Villas in the Balearics | Simple Luxury",
