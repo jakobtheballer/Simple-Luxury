@@ -36,7 +36,19 @@ export default function DatenschutzPage() {
               Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst und behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
             </p>
             <p className="mt-2">
-              Diese Website verwendet <strong className="text-[#0A0A0A]">kein Tracking, keine Analyse-Tools und keine Werbe-Cookies</strong>. Personenbezogene Daten werden nur im technisch notwendigen Umfang sowie bei aktiver Kontaktaufnahme durch Sie erhoben.
+              Diese Website verwendet <strong className="text-[#0A0A0A]">kein Third-Party Tracking, keine Marketing-Analyse und keine Werbe-Cookies</strong>.
+            </p>
+            <p className="mt-2">Zur technischen Optimierung und Website-Performance nutzen wir:</p>
+            <ul className="mt-2 space-y-1.5 pl-4">
+              {["Vercel Hosting (automatische Server-Logs)", "Google Search Console (Website-Analyse und Suchperformance)"].map((item) => (
+                <li key={item} className="flex items-center gap-3">
+                  <span className="w-px h-4 bg-[#C9A96E] flex-shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-2">
+              Personenbezogene Daten werden nur im technisch notwendigen Umfang, zur Website-Optimierung sowie bei aktiver Kontaktaufnahme durch Sie erhoben.
             </p>
           </div>
 
