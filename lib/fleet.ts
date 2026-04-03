@@ -1038,12 +1038,12 @@ export const fleet: Yacht[] = [
     crew: 1,
     dayPrice: 2000,
     displayPrice: "FROM €2,000/day",
-    image: "/images/fleet/de-antonio-42/1.webp",
+    image: "/images/de-antonio-42/1.webp",
     images: [
-      "/images/fleet/de-antonio-42/1.webp",
-      "/images/fleet/de-antonio-42/2.webp",
-      "/images/fleet/de-antonio-42/3.webp",
-      "/images/fleet/de-antonio-42/4.webp",
+      "/images/de-antonio-42/1.webp",
+      "/images/de-antonio-42/2.webp",
+      "/images/de-antonio-42/3.webp",
+      "/images/de-antonio-42/4.webp",
     ],
     shortDescription: "De Antonio D42 Open · 13m · 11 Day Guests · Built 2023 · Marina Botafoch, Ibiza",
     description:
