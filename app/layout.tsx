@@ -56,10 +56,9 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico?v=4", sizes: "32x32", type: "image/x-icon" },
-      { url: "/favicon.ico?v=4", sizes: "16x16", type: "image/x-icon" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", type: "image/x-icon" },
     ],
-    shortcut: "/favicon.ico?v=4",
   },
 };
 
@@ -67,8 +66,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <head>
-        <link rel="icon" href="/favicon.ico?v=4" sizes="32x32" type="image/x-icon" />
-        <link rel="shortcut icon" href="/favicon.ico?v=4" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       </head>
       <body className="min-h-full flex flex-col">
 
