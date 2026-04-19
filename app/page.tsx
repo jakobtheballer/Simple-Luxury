@@ -5,14 +5,20 @@ import HeroVideo from "./components/HeroVideo";
 import { fleet } from "@/lib/fleet";
 
 export const metadata: Metadata = {
-  title: "Luxury Yacht Charters & Private Villas in Ibiza & Mallorca",
-  description: "Book exclusive yacht charters and luxury villas in the Balearic Islands. Premium concierge, private pools, sea views. Plan your Mediterranean escape now.",
+  title: "Luxury Yacht Charters & Private Villa Rentals – Ibiza, Mallorca & Formentera",
+  description: "Book exclusive luxury yacht charters and private villa rentals in Ibiza, Mallorca & Formentera. Premium concierge, private pools, sea views. Plan your Mediterranean escape now.",
   alternates: { canonical: "https://simpleluxuryservice.de" },
   openGraph: {
-    title: "Simple Luxury | Exclusive Balearic Experiences",
-    description: "Premium concierge & yacht charter services in Ibiza, Mallorca and Formentera.",
+    title: "Simple Luxury | Luxury Yacht Charters & Private Villas – Ibiza & Mallorca",
+    description: "Exclusive yacht charters and private villa rentals in the Balearic Islands. Premium concierge, private pools, sea views.",
     url: "https://simpleluxuryservice.de",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Simple Luxury – Yacht Charter & Concierge Ibiza Mallorca" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Simple Luxury – Luxury Yacht Charter & Private Villas Ibiza Mallorca" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Luxury Yacht Charters & Private Villas – Ibiza, Mallorca & Formentera",
+    description: "Exclusive yacht charters and private villa rentals in the Balearic Islands. Premium concierge, private pools, sea views.",
+    images: ["/og-image.jpg"],
   },
 };
 

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "./components/Nav";
-import { getLocalBusinessSchema, getOrganizationSchema, getServiceSchema } from "@/lib/structured-data";
+import Schema from "./schema";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -18,32 +18,36 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Simple Luxury | Hütter & Streich Adventures – Yacht Charter & Concierge Ibiza Mallorca",
-  description: "Hütter & Streich Adventures – premium luxury concierge and yacht charter in Ibiza, Mallorca & Formentera. Private charters, exclusive villas, fine dining, and bespoke experiences.",
-  keywords: "luxury concierge Ibiza, yacht charter Mallorca, Hütter Streich Adventures, private villas Balearics, luxury experiences Formentera, yacht charter Ibiza, concierge service Mallorca",
+  title: {
+    default: "Simple Luxury | Luxury Yacht Charters & Private Villas – Ibiza & Mallorca",
+    template: "%s | Simple Luxury",
+  },
+  description: "Book exclusive luxury yacht charters and private villa rentals in Ibiza, Mallorca & Formentera. 24/7 concierge, private pools, sea views — Hütter & Streich Adventures.",
+  keywords: "luxury yacht charter ibiza, yacht charter mallorca, private villa rental ibiza, private villa mallorca, luxury concierge ibiza, catamaran charter balearics, luxury villa formentera, balearic islands yacht charter, ibiza villa rental, mallorca boat charter",
   metadataBase: new URL("https://simpleluxuryservice.de"),
   alternates: {
     canonical: "https://simpleluxuryservice.de",
   },
   openGraph: {
-    title: "Simple Luxury | Hütter & Streich Adventures – Exclusive Balearic Experiences",
-    description: "Hütter & Streich Adventures – premium concierge & yacht charter services in Ibiza, Mallorca and Formentera.",
+    title: "Simple Luxury | Luxury Yacht Charters & Private Villas – Ibiza & Mallorca",
+    description: "Book exclusive luxury yacht charters and private villa rentals in Ibiza, Mallorca & Formentera. 24/7 concierge, private pools, sea views.",
     url: "https://simpleluxuryservice.de",
     siteName: "Simple Luxury",
     type: "website",
+    locale: "en_US",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Simple Luxury – Yacht Charter & Concierge Ibiza Mallorca",
+        alt: "Simple Luxury – Luxury Yacht Charter & Private Villas Ibiza Mallorca",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Simple Luxury | Hütter & Streich Adventures – Exclusive Balearic Experiences",
-    description: "Hütter & Streich Adventures – luxury concierge, yacht charters & private villas in Ibiza, Mallorca & Formentera.",
+    title: "Simple Luxury | Luxury Yacht Charters & Private Villas – Ibiza & Mallorca",
+    description: "Exclusive yacht charters and private villa rentals in Ibiza, Mallorca & Formentera. 24/7 luxury concierge.",
     images: ["/og-image.jpg"],
   },
   verification: {
@@ -73,9 +77,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
         <Nav />
 
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(getLocalBusinessSchema()) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(getOrganizationSchema()) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(getServiceSchema()) }} />
+        <Schema />
 
         <div className="flex-1">
           {children}

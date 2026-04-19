@@ -1,5 +1,54 @@
 const BASE_URL = "https://simpleluxuryservice.de";
 
+export const getAggregateOfferSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "AggregateOffer",
+  "@id": `${BASE_URL}/#aggregate-offers`,
+  name: "Luxury Yacht Charters & Private Villa Rentals – Balearic Islands",
+  description: "Premium yacht charters and exclusive villa rentals in Ibiza, Mallorca and Formentera.",
+  url: BASE_URL,
+  priceCurrency: "EUR",
+  lowPrice: "1200",
+  highPrice: "15000",
+  offerCount: "10",
+  seller: { "@type": "Organization", name: "Simple Luxury", url: BASE_URL },
+  offers: [
+    {
+      "@type": "Offer",
+      name: "Day Yacht Charter – Hütter Power Catamaran",
+      description: "Private day charter aboard a Hütter power catamaran in Ibiza or Mallorca. Up to 12 guests.",
+      priceCurrency: "EUR",
+      price: "1200",
+      url: `${BASE_URL}/fleet`,
+      seller: { "@type": "Organization", name: "Simple Luxury" },
+      availability: "https://schema.org/InStock",
+      validFrom: "2025-01-01",
+    },
+    {
+      "@type": "Offer",
+      name: "Week Yacht Charter – Balearic Islands",
+      description: "7-night private catamaran charter in the Balearic Islands. Ibiza, Mallorca, Formentera.",
+      priceCurrency: "EUR",
+      price: "8500",
+      url: `${BASE_URL}/fleet`,
+      seller: { "@type": "Organization", name: "Simple Luxury" },
+      availability: "https://schema.org/InStock",
+      validFrom: "2025-01-01",
+    },
+    {
+      "@type": "Offer",
+      name: "Private Villa Rental – Ibiza & Mallorca",
+      description: "Exclusive villa rental with private pool, sea views, and 24/7 concierge support.",
+      priceCurrency: "EUR",
+      price: "3000",
+      url: `${BASE_URL}/villas`,
+      seller: { "@type": "Organization", name: "Simple Luxury" },
+      availability: "https://schema.org/InStock",
+      validFrom: "2025-01-01",
+    },
+  ],
+});
+
 export const getLocalBusinessSchema = () => ({
   "@context": "https://schema.org",
   "@type": "LocalBusiness",

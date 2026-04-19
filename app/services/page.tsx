@@ -1,8 +1,22 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Luxury Concierge Services | Transfers, Dining, VIP Access",
-  description: "24/7 concierge service for yacht charters and villa rentals. Airport transfers, restaurant reservations, VIP access, and more.",
+  title: "Luxury Concierge Services Ibiza & Mallorca | VIP Access, Transfers & Dining",
+  description: "24/7 luxury concierge in Ibiza, Mallorca & Formentera. Helicopter transfers, Michelin restaurant reservations, VIP club access, private chefs, and bespoke experiences.",
+  keywords: "luxury concierge ibiza, concierge service mallorca, vip access ibiza, private chef mallorca, helicopter transfer ibiza, restaurant reservations mallorca, lifestyle management balearics",
+  alternates: { canonical: "https://simpleluxuryservice.de/services" },
+  openGraph: {
+    title: "Luxury Concierge Services Ibiza & Mallorca | Simple Luxury",
+    description: "24/7 luxury concierge in Ibiza, Mallorca & Formentera. Helicopter transfers, VIP access, Michelin dining, private chefs and bespoke experiences.",
+    url: "https://simpleluxuryservice.de/services",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Luxury Concierge Services Ibiza Mallorca – Simple Luxury" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Luxury Concierge Services Ibiza & Mallorca",
+    description: "24/7 concierge in Ibiza, Mallorca & Formentera. VIP access, transfers, dining, private chefs.",
+    images: ["/og-image.jpg"],
+  },
 };
 
 const WA = "https://wa.me/4915738248355";

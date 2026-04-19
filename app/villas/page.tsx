@@ -1,14 +1,21 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Luxury Villas Ibiza & Mallorca | Private Pools & Sea Views",
-  description: "Handpicked luxury villas in Ibiza and Mallorca. 4–6 bedrooms, private pools, sea views, 24/7 concierge. Book your exclusive villa today.",
+  title: "Private Villa Rental Ibiza & Mallorca | Luxury Villas Balearic Islands",
+  description: "Exclusive private villa rentals in Ibiza, Mallorca & Formentera. 4–12 guests, private pools, sea views, 24/7 concierge. Handpicked luxury villas in the Balearics.",
+  keywords: "private villa rental ibiza, luxury villa mallorca, villa rental formentera, ibiza villa hire, mallorca luxury villa, balearic islands villa rental, private pool villa ibiza, sea view villa mallorca",
   alternates: { canonical: "https://simpleluxuryservice.de/villas" },
   openGraph: {
-    title: "Luxury Villas in the Balearics | Simple Luxury",
-    description: "Curated private villas in Ibiza, Mallorca and Formentera — clifftop estates, bohemian sanctuaries, and everything in between.",
+    title: "Private Villa Rental Ibiza & Mallorca | Simple Luxury",
+    description: "Exclusive private villa rentals in Ibiza, Mallorca and Formentera. 4–12 guests, private pools, sea views, 24/7 concierge support.",
     url: "https://simpleluxuryservice.de/villas",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Private Villas Ibiza Mallorca – Simple Luxury" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Private Villa Rental Ibiza Mallorca – Simple Luxury" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Private Villa Rental Ibiza & Mallorca | Simple Luxury",
+    description: "Exclusive private villa rentals in the Balearics. Private pools, sea views, 24/7 concierge.",
+    images: ["/og-image.jpg"],
   },
 };
 

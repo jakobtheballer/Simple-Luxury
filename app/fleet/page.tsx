@@ -3,14 +3,21 @@ import Image from "next/image";
 import { fleet } from "@/lib/fleet";
 
 export const metadata: Metadata = {
-  title: "Yacht Charter Ibiza & Mallorca | Luxury Catamarans",
-  description: "Premium yacht charters in the Balearic Islands. Modern catamarans for day trips and overnight voyages. Book your private yacht now.",
+  title: "Yacht Charter Ibiza & Mallorca | Luxury Catamaran Charter Balearics",
+  description: "Private luxury catamaran charters in Ibiza, Mallorca & Formentera. Charter Dr. No, Moneypenny or Goldfinger for day trips and overnight voyages. From €1,200/day.",
+  keywords: "yacht charter ibiza, catamaran charter mallorca, luxury boat hire ibiza, private yacht charter balearics, day charter ibiza, catamaran rental mallorca, yacht hire formentera",
   alternates: { canonical: "https://simpleluxuryservice.de/fleet" },
   openGraph: {
-    title: "Hütter Yachts – Exclusive Charter Fleet | Simple Luxury",
-    description: "Charter Dr. No, Moneypenny or Goldfinger for a private day or overnight experience in Mallorca and Ibiza.",
+    title: "Yacht Charter Ibiza & Mallorca | Hütter Fleet – Simple Luxury",
+    description: "Charter Dr. No, Moneypenny or Goldfinger — private catamaran day & overnight charters in Ibiza, Mallorca and Formentera. From €1,200/day.",
     url: "https://simpleluxuryservice.de/fleet",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Hütter Yacht Charter – Simple Luxury" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Hütter Yacht Charter Ibiza Mallorca – Simple Luxury" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Yacht Charter Ibiza & Mallorca | Hütter Fleet",
+    description: "Private catamaran charters in Ibiza, Mallorca & Formentera. Day trips and overnight voyages from €1,200.",
+    images: ["/og-image.jpg"],
   },
 };
 
