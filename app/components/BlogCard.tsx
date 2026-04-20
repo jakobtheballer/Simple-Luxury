@@ -26,7 +26,6 @@ export default function BlogCard({ post }: { post: BlogPost }) {
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-          onError={() => {}}
         />
         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500" />
         {/* Category badge */}
