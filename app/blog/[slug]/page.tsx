@@ -104,6 +104,42 @@ function ContentBlock({ block }: { block: BlogContent }) {
     );
   }
 
+  if (block.type === "cta") {
+    return (
+      <div className="my-10 p-7 border border-[#0A0A0A]/10 flex flex-col sm:flex-row sm:items-center gap-5">
+        <p className="text-sm text-[#0A0A0A]/60 leading-relaxed flex-1">{block.text}</p>
+        <a
+          href={block.href}
+          className="shrink-0 text-[10px] uppercase tracking-[0.15em] px-7 py-3.5 text-white whitespace-nowrap hover:opacity-80 transition-opacity"
+          style={{ backgroundColor: DARK }}
+        >
+          {block.label} →
+        </a>
+      </div>
+    );
+  }
+
+  if (block.type === "image") {
+    return (
+      <figure className="my-10">
+        <div
+          className="w-full flex items-center justify-center text-center p-10"
+          style={{ aspectRatio: "16/9", backgroundColor: "#F5F2EB" }}
+        >
+          <div>
+            <div className="h-px w-12 mx-auto mb-4" style={{ backgroundColor: GOLD }} />
+            <p className="text-[9px] uppercase tracking-[0.25em] text-[#0A0A0A]/40">{block.alt}</p>
+          </div>
+        </div>
+        {block.caption && (
+          <figcaption className="mt-3 text-xs text-center text-[#0A0A0A]/40 italic">
+            {block.caption}
+          </figcaption>
+        )}
+      </figure>
+    );
+  }
+
   return null;
 }
 

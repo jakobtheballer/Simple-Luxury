@@ -6,7 +6,9 @@ export type BlogContent =
   | { type: "paragraph"; text: string }
   | { type: "heading"; text: string }
   | { type: "tip"; label: string; text: string }
-  | { type: "list"; heading?: string; items: string[] };
+  | { type: "list"; heading?: string; items: string[] }
+  | { type: "cta"; text: string; href: string; label: string }
+  | { type: "image"; alt: string; caption: string };
 
 export type BlogPost = {
   slug: string;
@@ -29,7 +31,7 @@ export const blogPosts: BlogPost[] = [
     description: "Complete guide to seasons, weather, pricing & booking tips for yacht charters in Ibiza. Find out when to book for the best experience.",
     date: "2024-04-19",
     author: "Simple Luxury",
-    image: "/blog/ibiza-yacht.jpg",
+    image: "/blog/ibiza-yacht.svg",
     excerpt: "Timing your Ibiza yacht charter correctly makes the difference between a good trip and an exceptional one. Here is everything you need to know.",
     readingTime: "5 min read",
     content: [
@@ -72,6 +74,12 @@ export const blogPosts: BlogPost[] = [
         label: "Best Value Window",
         text: "September offers peak-season water temperatures at shoulder-season prices with far greater booking flexibility. If your schedule allows it, this is the optimal month for a Balearic charter.",
       },
+      {
+        type: "cta",
+        text: "Ready to plan your Ibiza yacht charter? Browse our fleet of private catamarans available from spring through October.",
+        href: "/fleet",
+        label: "View Available Yachts",
+      },
     ],
   },
   {
@@ -81,7 +89,7 @@ export const blogPosts: BlogPost[] = [
     description: "How to plan a luxury wedding at a private villa in the Balearic Islands. Venues, logistics, vendors and everything your concierge handles.",
     date: "2024-04-20",
     author: "Simple Luxury",
-    image: "/blog/wedding-villa.jpg",
+    image: "/blog/wedding-villa.svg",
     excerpt: "A private villa wedding in the Balearics requires local expertise, trusted vendors and exceptional organisation. Here is what a proper concierge service actually does.",
     readingTime: "6 min read",
     content: [
@@ -106,6 +114,12 @@ export const blogPosts: BlogPost[] = [
           "Proximity to guest accommodation and airports",
         ],
       },
+      {
+        type: "cta",
+        text: "Browse our handpicked collection of private villas across Ibiza, Mallorca and Formentera — each visited personally and selected for quality, privacy and character.",
+        href: "/villas",
+        label: "View Private Villas",
+      },
       { type: "heading", text: "Vendor Coordination" },
       {
         type: "paragraph",
@@ -116,58 +130,375 @@ export const blogPosts: BlogPost[] = [
         label: "Timing",
         text: "The ideal window for a Balearic villa wedding is late May, early June or September — exceptional weather, manageable vendor availability and the island at a pace that makes the logistics workable.",
       },
-      { type: "heading", text: "What Our Concierge Handles" },
       {
-        type: "paragraph",
-        text: "For destination weddings, we typically manage the vendor shortlist and contracts, logistics coordination on the day, guest transfers from airport and accommodation, yacht charter for the wedding party, private chef briefings, restaurant bookings for pre and post-wedding meals, and on-the-day liaison with all suppliers. The couple's role is to enjoy the island.",
+        type: "cta",
+        text: "Our concierge team manages vendor coordination, logistics and on-the-day support for villa weddings across the Balearic Islands.",
+        href: "/services",
+        label: "Explore Concierge Services",
       },
     ],
   },
   {
     slug: "formentera-day-trip-ibiza",
-    title: "Formentera Day Trip by Yacht from Ibiza – Complete Itinerary",
+    title: "Formentera Day Trip from Ibiza – Complete Itinerary & Guide",
     category: "Guides",
-    description: "Perfect day trip from Ibiza to Formentera by private yacht. Beaches, anchorages, lunch spots and everything you need to plan the crossing.",
+    description: "Complete day trip guide from Ibiza to Formentera by yacht or ferry. Best beaches, restaurants, itinerary, timing & insider tips for the perfect island escape.",
     date: "2024-04-21",
     author: "Simple Luxury",
-    image: "/blog/formentera.jpg",
-    excerpt: "The crossing from Ibiza to Formentera takes less than an hour by private charter. What you find on the other side justifies every minute of it.",
-    readingTime: "5 min read",
+    image: "/blog/formentera.svg",
+    excerpt: "Just 30 minutes from Ibiza lies Formentera — a small island with Caribbean-quality water, white sand beaches, and an unhurried pace that the larger island has long since lost. Here is how to experience it properly.",
+    readingTime: "10 min read",
     content: [
       {
         type: "paragraph",
-        text: "Formentera is Ibiza's quieter, cleaner neighbour — separated by a narrow channel of shallow turquoise water that produces some of the most extraordinary sea colour in the Mediterranean. A private day charter from Ibiza is the only way to experience the island properly, arriving at the right beaches at the right time without the constraints of a ferry schedule.",
+        text: "Just 30 minutes from Ibiza lies Formentera — the smallest of the Balearic Islands and, by most measures, the most beautiful. The water here is extraordinary: flat, shallow, and a shade of turquoise that photographs consistently fail to capture. The beaches are unhurried. The restaurants serve fish that arrived that morning. And unlike Ibiza, there is no queue for any of it — if you know how to arrive.",
       },
-      { type: "heading", text: "Departure and the Crossing" },
       {
         type: "paragraph",
-        text: "Departing Ibiza Marina between 09:00 and 09:30 is optimal. The crossing through Es Freus — the channel between the two islands — takes approximately 45 minutes to an hour depending on the vessel. The shallow, reef-studded water creates a colour gradient that consistently surprises first-time visitors. The route passes close to the small islands of S'Espalmador, where a brief stop is worth making if conditions allow.",
+        text: "The operative word is how. Formentera receives hundreds of day-trippers by ferry every summer morning, all arriving at the same time, all heading to the same beaches. The island is small enough that this concentration is felt immediately. The alternative — a private yacht charter departing at 10am, stopping first at Illa Espalmador before the ferries land — delivers a categorically different experience. This guide covers both options, and explains exactly why the difference matters.",
       },
       {
-        type: "tip",
-        label: "S'Espalmador",
-        text: "This uninhabited island between Ibiza and Formentera has a natural mud lagoon reputed for its skin benefits. The water around it is extraordinary — anchor here before the main crossing for a quieter morning swim.",
+        type: "image",
+        alt: "Turquoise waters of Formentera viewed from a private yacht at anchor",
+        caption: "Formentera from the water — the crossing from Ibiza takes under an hour by private charter",
       },
-      { type: "heading", text: "The Best Anchorages" },
+      { type: "heading", text: "Yacht Charter vs Ferry to Formentera – Which Option Wins?" },
       {
         type: "paragraph",
-        text: "Ses Illetes on the northern tip of Formentera is consistently cited as one of the most beautiful beaches in the world. The water is shallow and flat, the sand is white, and the colour is Caribbean. Arriving by private charter means you can position the boat in the water and swim directly from the stern — the experience that the ferry passengers watching from the beach cannot replicate.",
+        text: "Both options get you to Formentera. The experience on arrival, and the flexibility you have once there, are not remotely comparable. Here is an honest breakdown of each.",
       },
       {
         type: "list",
-        heading: "Recommended Anchorages by Time",
+        heading: "Ferry — The Budget Route",
         items: [
-          "10:00 – S'Espalmador: morning swim, quiet anchorage",
-          "11:30 – Ses Illetes north: prime position before the midday crowd",
-          "13:30 – Llevant beach: lunch swim, calmer water",
-          "15:30 – La Savina area: optional stop at Tanga beach bar",
-          "17:00 – Begin return crossing to Ibiza",
+          "Cost: €20–30 per person return (€200–300 for a group of ten)",
+          "Journey time: 30–35 minutes, departures roughly hourly",
+          "No booking flexibility — you leave and return on the ferry's schedule",
+          "No access to Illa Espalmador, sea caves or offshore anchorages",
+          "Beaches and restaurants are crowded with ferry arrivals between 11:30am and 3pm",
+          "Works well for solo travellers or couples on a budget",
         ],
       },
-      { type: "heading", text: "Lunch on the Water" },
+      {
+        type: "list",
+        heading: "Private Yacht Charter — The Better Option",
+        items: [
+          "Cost: €1,200–1,600 for the day; €120–160 per person in a group of ten",
+          "Depart when you choose — 10am means Illa Espalmador before anyone else",
+          "Access to beaches and anchorages no ferry can reach",
+          "Professional crew with local knowledge of tides, anchorages and conditions",
+          "Snorkelling from the boat, paddleboards, on-deck food and drinks",
+          "Stable catamaran platform — minimal motion even in choppy conditions",
+          "Entire boat is exclusively yours — no shared space",
+        ],
+      },
+      {
+        type: "tip",
+        label: "The Real Cost Comparison",
+        text: "A private charter at €1,400 shared between ten people costs €140 per person — approximately €110 more than the ferry, per head. For that premium you gain an entirely private vessel, access to beaches no ferry visits, a professional crew, snorkelling equipment and complete flexibility over your schedule. The comparison is rarely as straightforward as the headline numbers suggest.",
+      },
+      {
+        type: "cta",
+        text: "Browse our Formentera-ready charter fleet — catamarans available for day charters departing Ibiza, with crew, snorkelling gear and flexible itineraries.",
+        href: "/fleet",
+        label: "View Charter Fleet",
+      },
+      { type: "heading", text: "The Perfect Formentera Day – Hour by Hour" },
       {
         type: "paragraph",
-        text: "We recommend provisioning the yacht for lunch rather than mooring at Formentera's beach restaurants. The wait times at peak season are long and the experience of eating on deck at anchor — fresh seafood, cold wine, the island visible in every direction — is categorically superior. Our team provisions the boat the morning of departure.",
+        text: "The following itinerary is based on hundreds of charters we have run from Ibiza to Formentera. It is optimised for a 10am departure — late enough to sleep in, early enough to reach Illa Espalmador before the ferry crowds. The crew manages everything; your role is simply to enjoy the progression of the day.",
+      },
+      {
+        type: "list",
+        heading: "10:00 — Depart Ibiza Marina",
+        items: [
+          "Board the yacht at Ibiza Marina — crew are ready and briefed",
+          "Coffee, juice and light breakfast served on deck as you clear the harbour",
+          "The crossing begins with views of Ibiza's old town from the sea",
+          "Crew briefs the group on the day's route and conditions",
+        ],
+      },
+      {
+        type: "image",
+        alt: "Yacht departing Ibiza Marina at dawn with Es Vedrà in background",
+        caption: "Departing at 10am — late enough to rest, early enough to arrive before the crowds",
+      },
+      {
+        type: "list",
+        heading: "11:00 — Illa Espalmador: The Secret First Stop",
+        items: [
+          "A small uninhabited island between Ibiza and Formentera",
+          "Accessible only by private vessel — ferries pass but cannot anchor",
+          "Pristine white sand beach with no facilities and no crowds at 11am",
+          "Water visibility of 20–25 metres — exceptional snorkelling conditions",
+          "Sea turtles are occasionally sighted in the surrounding shallows",
+          "90-minute stop: swim, snorkel, explore the beach",
+        ],
+      },
+      {
+        type: "tip",
+        label: "Why 10am Matters",
+        text: "Illa Espalmador is at its best before midday. Ferry passengers from Ibiza begin arriving at Formentera around 11:30am and some make their way here by rented boat in the afternoon. At 11am, with a 10am departure, you typically have the island entirely to yourself.",
+      },
+      {
+        type: "list",
+        heading: "12:30 — Sail Along the Formentera Coastline",
+        items: [
+          "A 20-minute sail from Espalmador to the northern tip of Formentera",
+          "Crew points out the lighthouse at La Mola visible from the sea",
+          "Swimming possible from the boat en route",
+          "Light refreshments served on deck",
+        ],
+      },
+      { type: "heading", text: "Lunch – Three Restaurants Worth Knowing" },
+      {
+        type: "paragraph",
+        text: "Formentera's beach restaurant scene has improved significantly over the past decade. The following three represent consistent quality across different styles — our concierge pre-books whichever you select the day before your charter. The tender drops you directly at the beach; no transport, no waiting.",
+      },
+      {
+        type: "tip",
+        label: "Besó Beach",
+        text: "Premium beachfront restaurant with a relaxed, upscale atmosphere. The menu focuses on fresh Mediterranean cuisine and grilled seafood with excellent wine. Appropriate for all occasions — families, groups, celebrations. Mains €20–35.",
+      },
+      {
+        type: "tip",
+        label: "Duplo Beach Club",
+        text: "Modern, sophisticated setting with a broad Mediterranean menu and consistent execution. Popular with groups and ideal for a longer lunch with good food across varied preferences. Mains €20–35.",
+      },
+      {
+        type: "tip",
+        label: "Hannah",
+        text: "The most refined of the three — gourmet Mediterranean cuisine with premium seafood and an elegant setting suited to couples, anniversaries or anyone wanting a more considered dining experience. Mains €25–40.",
+      },
+      {
+        type: "image",
+        alt: "Fresh grilled seafood lunch at a Formentera beach restaurant with Mediterranean views",
+        caption: "Lunch at Formentera — the fish arrived this morning; the table is yours for as long as you need it",
+      },
+      {
+        type: "list",
+        heading: "3:00 — Afternoon Beach Time",
+        items: [
+          "Return to the yacht or remain at the beach — entirely your choice",
+          "Paddleboards available from the boat",
+          "Swimming from the stern or the beach",
+          "Crew manages the boat while guests enjoy the afternoon",
+          "Optional: explore nearby coves by tender",
+        ],
+      },
+      {
+        type: "list",
+        heading: "4:00 — Optional: Sea Caves & Hidden Coves",
+        items: [
+          "The coastline between Formentera and Ibiza contains several sea caves",
+          "Accessible only by private tender — inaccessible from shore",
+          "Snorkelling conditions inside the caves are exceptional",
+          "Crystal-clear water, dramatic rock formations",
+          "Zero crowds at any time of day",
+        ],
+      },
+      {
+        type: "image",
+        alt: "Snorkelling in crystal-clear Formentera sea cave with colourful fish visible",
+        caption: "The sea caves between the two islands — accessible only by private tender",
+      },
+      {
+        type: "list",
+        heading: "5:00 — Sunset Sailing Back to Ibiza",
+        items: [
+          "Depart Formentera as the afternoon light begins to soften",
+          "The crossing back faces west — directly into the sunset",
+          "Aperitifs and snacks served on deck",
+          "The most photographed part of the day for most groups",
+          "Arrival in Ibiza Marina at approximately 6:30pm",
+        ],
+      },
+      {
+        type: "tip",
+        label: "For Proposals & Celebrations",
+        text: "The return crossing at sunset — just your group, the golden light, the sea quiet — is one of the most naturally beautiful moments available anywhere in the Mediterranean. If you have a proposal, anniversary or birthday in mind, brief the crew before departure. They will arrange the details.",
+      },
+      { type: "heading", text: "Formentera's Best Beaches – Beyond the Tourist Trail" },
+      {
+        type: "paragraph",
+        text: "Formentera is small enough that most visitors see the same three or four beaches. By boat, the full coastline is accessible. These are the ones that consistently stand apart.",
+      },
+      {
+        type: "list",
+        heading: "Ses Illetes",
+        items: [
+          "The island's most famous beach — and justifiably so",
+          "Shallow, flat water in multiple shades of turquoise",
+          "Fine white sand, minimal development, excellent facilities",
+          "Best visited early morning (before 11am) or late afternoon",
+          "Arrives by private charter or tender — walk-in access via ferry is a 30-minute hike",
+        ],
+      },
+      {
+        type: "list",
+        heading: "Playa Migjorn",
+        items: [
+          "Five kilometres of unbroken sand — the island's longest beach",
+          "Noticeably less crowded than Ses Illetes at any time of day",
+          "Several good beach restaurants along the length of the beach",
+          "Faces south — excellent light throughout the afternoon",
+          "Ideal for larger groups wanting space and variety",
+        ],
+      },
+      {
+        type: "list",
+        heading: "Cala Saona",
+        items: [
+          "The most intimate beach on the island — small, cliff-framed, west-facing",
+          "Perfect sunset position from approximately 6pm",
+          "Calm, sheltered water — excellent for swimming",
+          "Accessible by car and by boat; the boat approach is more dramatic",
+          "Best for couples or small groups wanting a quieter setting",
+        ],
+      },
+      {
+        type: "list",
+        heading: "Illa Espalmador",
+        items: [
+          "Uninhabited island; no facilities, no ferry access, no crowds",
+          "Only accessible by private vessel — the defining advantage of a charter",
+          "White sand beaches on the sheltered eastern side",
+          "Natural saltwater lagoon on the interior — reputed for its mineral content",
+          "Snorkelling around the island is consistently exceptional",
+        ],
+      },
+      {
+        type: "image",
+        alt: "Aerial view of Illa Espalmador showing white sand beaches and turquoise lagoon",
+        caption: "Illa Espalmador — uninhabited, pristine, and inaccessible without a private vessel",
+      },
+      { type: "heading", text: "What to Pack for Your Formentera Day Trip" },
+      {
+        type: "list",
+        heading: "Essentials",
+        items: [
+          "SPF 50+ sunscreen — reef-safe formulas preferred in protected waters",
+          "Polarised sunglasses — the glare off the water is intense at midday",
+          "Two swimsuits — one dries while you wear the other",
+          "Lightweight cover-up for the return sailing when temperatures drop",
+          "Waterproof case for phone or camera",
+          "Water shoes or reef shoes for rocky cove entries",
+          "Light sweater — evenings on the water are cooler than they appear",
+        ],
+      },
+      {
+        type: "list",
+        heading: "Formentera-Specific",
+        items: [
+          "Underwater camera or GoPro — the visibility at Espalmador is 20+ metres",
+          "Insect repellent for sunset hours near the beach",
+          "Dry clothes and shoes for dinner in Ibiza on return",
+          "Small dry bag for valuables on the beach",
+          "Cash in small denominations — most restaurants accept cards but smaller vendors may not",
+        ],
+      },
+      {
+        type: "tip",
+        label: "Underwater Photography",
+        text: "The snorkelling at Illa Espalmador produces consistently exceptional underwater photographs. Sea turtles, octopus, sea bass and the occasional barracuda are all regularly sighted. A waterproof camera or GoPro is genuinely worthwhile here.",
+      },
+      { type: "heading", text: "Insider Secrets & Pro Tips" },
+      {
+        type: "paragraph",
+        text: "The following observations come from operating charters on this route for several years. They are the kind of detail that makes a material difference to the quality of the day.",
+      },
+      {
+        type: "list",
+        heading: "Timing",
+        items: [
+          "10am departure is optimal — late enough to feel rested, early enough for Espalmador pristine",
+          "Avoid the Formentera coast between 11:30am and 3pm — maximum ferry crowd overlap",
+          "Weekdays throughout the season are noticeably quieter than weekends",
+          "September and October offer the best combination of weather, water and crowd levels",
+        ],
+      },
+      {
+        type: "list",
+        heading: "On the Water",
+        items: [
+          "Water clarity at Espalmador reaches 20–25 metres in good conditions",
+          "Best snorkelling light is between 10am and noon — sun angle is optimal",
+          "Catamarans are exceptionally stable — motion sickness is rarely an issue",
+          "The crew carries all necessary safety equipment and certifications",
+          "Shower and changing facilities on board for post-swim freshening up",
+        ],
+      },
+      {
+        type: "list",
+        heading: "Restaurant",
+        items: [
+          "Our concierge books the table the day before — request your restaurant when booking",
+          "Arriving by tender from an anchored boat avoids the midday pedestrian traffic entirely",
+          "1:15pm arrival at the restaurant is the optimal timing — post-rush, pre-afternoon",
+          "The fresh catch of the day at any of the three restaurants is always the safest order",
+          "Lunch typically runs 90 minutes to two hours — no need to rush back",
+        ],
+      },
+      {
+        type: "tip",
+        label: "Special Occasions",
+        text: "If you are planning a proposal, anniversary or birthday celebration, brief the crew before departure. Champagne can be arranged, specific sunset positions selected, and the restaurant notified for appropriate table arrangements. The more notice you give, the more precisely the day can be calibrated.",
+      },
+      { type: "heading", text: "How to Book Your Perfect Formentera Day Trip" },
+      {
+        type: "paragraph",
+        text: "The process is straightforward. Our team handles everything from charter selection to restaurant reservation to on-the-day coordination. What follows is what to expect.",
+      },
+      {
+        type: "list",
+        heading: "The Booking Process",
+        items: [
+          "Step 1: Contact our team with your date, group size and any celebration requirements",
+          "Step 2: Receive a charter recommendation matched to your group — vessel type, capacity, budget",
+          "Step 3: Confirm your restaurant preference from the three options (Besó, Duplo or Hannah)",
+          "Step 4: We handle the restaurant reservation, itinerary briefing and crew preparation",
+          "Step 5: Arrive at the marina at 10am — everything is ready",
+        ],
+      },
+      {
+        type: "list",
+        heading: "What's Included",
+        items: [
+          "Professional captain and crew for the full day",
+          "All safety equipment and current maritime certifications",
+          "Fuel for the planned itinerary",
+          "Snorkelling equipment for all guests",
+          "Paddleboards and standard water sports equipment",
+          "Restaurant reservation at your chosen venue",
+          "Tender for transfers between boat and beach",
+          "24/7 concierge contact throughout the day",
+        ],
+      },
+      {
+        type: "tip",
+        label: "Cost Breakdown",
+        text: "Small group (4–6 guests): €1,200–1,400 for the day. Medium group (6–10 guests): €1,400–1,600 for the day. Per person at full capacity: €120–200, depending on vessel. Restaurant lunch is separate: €20–40 per person depending on choice. Total per person, all in: approximately €160–240.",
+      },
+      {
+        type: "cta",
+        text: "Our Formentera charters depart Ibiza at 10am. Browse available vessels and check dates for your preferred trip.",
+        href: "/fleet",
+        label: "Book Your Formentera Charter",
+      },
+      { type: "heading", text: "Formentera Is Best Experienced From the Water" },
+      {
+        type: "paragraph",
+        text: "The Balearics have dozens of beautiful beaches. But Formentera is different — it is the right size, the right pace and the right quality of water for a single perfect day. Illa Espalmador before anyone else arrives. Fresh fish at a beach table with the sea at your feet. The sunset on the return crossing with a glass in hand. These are not complicated pleasures, but they require arriving correctly.",
+      },
+      {
+        type: "paragraph",
+        text: "A private charter means you control the timing, the stops and the pace of the day. The crew manages everything else. Your only task is to be present for one of the better days available anywhere in the Mediterranean.",
+      },
+      {
+        type: "cta",
+        text: "Read our complete Formentera destination guide for more on beaches, restaurants and what makes the island worth understanding properly.",
+        href: "/guides/formentera",
+        label: "Read the Formentera Guide",
       },
     ],
   },
@@ -178,13 +509,13 @@ export const blogPosts: BlogPost[] = [
     description: "Complete guide to luxury concierge services in the Balearic Islands. What a real concierge handles, what to expect, and how to make the most of it.",
     date: "2024-04-22",
     author: "Simple Luxury",
-    image: "/blog/concierge.jpg",
+    image: "/blog/concierge.svg",
     excerpt: "A genuine luxury concierge does not simply make reservations. Here is what a proper service actually looks like in Ibiza and Mallorca.",
     readingTime: "5 min read",
     content: [
       {
         type: "paragraph",
-        text: "The term 'concierge' is used loosely across the hospitality industry. A hotel concierge points you towards a list of partners. A genuine luxury concierge in the Balearics operates on relationships — with boat captains, restaurant owners, villa managers, club directors and a network of people who make things happen because they want to, not because they are paid a referral fee.",
+        text: "The term concierge is used loosely across the hospitality industry. A hotel concierge points you towards a list of partners. A genuine luxury concierge in the Balearics operates on relationships — with boat captains, restaurant owners, villa managers, club directors and a network of people who make things happen because they want to, not because they are paid a referral fee.",
       },
       { type: "heading", text: "What We Actually Handle" },
       {
@@ -210,12 +541,18 @@ export const blogPosts: BlogPost[] = [
       {
         type: "tip",
         label: "What To Tell Us",
-        text: "The more context you give, the better the result. Group composition, budget range, priorities (sea time versus nightlife versus food versus privacy) and any specific requests you already have in mind — all of this lets us build something specific rather than generic.",
+        text: "The more context you give, the better the result. Group composition, budget range, priorities — sea time versus nightlife versus food versus privacy — and any specific requests you already have in mind. All of this lets us build something specific rather than generic.",
       },
       { type: "heading", text: "The Difference It Makes" },
       {
         type: "paragraph",
         text: "The practical value of a concierge service is not the individual bookings — it is the coordination. A private chef confirmed, then the yacht delayed, then a restaurant reservation that no longer fits the timing: resolving these dependencies in real time, with local relationships that allow adjustments, is where the service earns its place. Your experience remains seamless because everything runs through one team who knows the full picture.",
+      },
+      {
+        type: "cta",
+        text: "Explore our full range of concierge services across Ibiza, Mallorca and Formentera — from yacht charters to private dining to VIP access.",
+        href: "/services",
+        label: "View All Services",
       },
     ],
   },
@@ -226,7 +563,7 @@ export const blogPosts: BlogPost[] = [
     description: "Honest comparison of luxury yacht charters versus traditional hotel stays in the Balearic Islands. Privacy, flexibility, value and experience.",
     date: "2024-04-23",
     author: "Simple Luxury",
-    image: "/blog/yacht-vs-hotel.jpg",
+    image: "/blog/yacht-vs-hotel.svg",
     excerpt: "A luxury hotel in Ibiza costs as much as a private charter. The experiences are not remotely comparable.",
     readingTime: "4 min read",
     content: [
@@ -254,6 +591,12 @@ export const blogPosts: BlogPost[] = [
         type: "paragraph",
         text: "The strongest Balearic itinerary uses a private villa as a base and supplements it with yacht charter days. The villa provides a proper home — kitchen, pool, space to decompress. The charter provides access to what the islands do best: the water, the calas, the perspective of seeing the coastline from the sea. Our concierge service is built around exactly this combination.",
       },
+      {
+        type: "cta",
+        text: "Browse our charter fleet — catamarans and motor yachts available for day and overnight charters across Ibiza, Mallorca and Formentera.",
+        href: "/fleet",
+        label: "View Yacht Fleet",
+      },
     ],
   },
   {
@@ -263,7 +606,7 @@ export const blogPosts: BlogPost[] = [
     description: "The best luxury restaurants in Ibiza selected by our concierge team. From clifftop terraces to hidden gardens — where to eat and how to book.",
     date: "2024-04-24",
     author: "Simple Luxury",
-    image: "/blog/restaurants-ibiza.jpg",
+    image: "/blog/restaurants-ibiza.svg",
     excerpt: "Ibiza's dining scene has moved well beyond party food. These five restaurants represent the serious end of the island's kitchen.",
     readingTime: "4 min read",
     content: [
@@ -301,6 +644,12 @@ export const blogPosts: BlogPost[] = [
         label: "Booking Access",
         text: "Our concierge service holds priority reservation access at all five of these restaurants. For July and August dates, we recommend engaging at least 4–6 weeks in advance.",
       },
+      {
+        type: "cta",
+        text: "Explore our complete Ibiza destination guide — beaches, experiences, where to stay and more insider recommendations from our team.",
+        href: "/guides/ibiza",
+        label: "Read the Full Ibiza Guide",
+      },
     ],
   },
   {
@@ -310,7 +659,7 @@ export const blogPosts: BlogPost[] = [
     description: "Comprehensive guide to the best beaches in Mallorca with insider tips on access, crowds, water quality and what makes each one worth visiting.",
     date: "2024-04-25",
     author: "Simple Luxury",
-    image: "/blog/mallorca-beaches.jpg",
+    image: "/blog/mallorca-beaches.svg",
     excerpt: "Mallorca has over 260 beaches. Most visitors see the same five. Here is where the locals and the charter captains actually go.",
     readingTime: "6 min read",
     content: [
@@ -353,6 +702,18 @@ export const blogPosts: BlogPost[] = [
           "Cala Figuera — fishing village atmosphere, excellent lunch options",
         ],
       },
+      {
+        type: "cta",
+        text: "Read our complete Mallorca destination guide for more on beaches, restaurants, where to stay and the best experiences on the island.",
+        href: "/guides/mallorca",
+        label: "Read the Mallorca Guide",
+      },
+      {
+        type: "cta",
+        text: "The best Mallorca beaches are most accessible by private charter. Browse our fleet of Mallorca-based vessels.",
+        href: "/fleet",
+        label: "View Mallorca Charter Fleet",
+      },
     ],
   },
   {
@@ -362,7 +723,7 @@ export const blogPosts: BlogPost[] = [
     description: "Transparent breakdown of private yacht charter pricing in Ibiza & Mallorca. Day rates, week rates, what's included and what costs extra.",
     date: "2024-04-26",
     author: "Simple Luxury",
-    image: "/blog/yacht-pricing.jpg",
+    image: "/blog/yacht-pricing.svg",
     excerpt: "Charter pricing in the Balearics is often quoted without enough context. Here is what is actually included, what is not, and how to compare properly.",
     readingTime: "5 min read",
     content: [
@@ -411,6 +772,12 @@ export const blogPosts: BlogPost[] = [
       {
         type: "paragraph",
         text: "Prices peak in July and August, with June and September running approximately 15–20% lower. April, May and October offer the largest discounts — often 25–35% below peak — with minimal compromise on conditions. Our fleet pricing is transparent: what you see is what you pay, with provisioning quoted separately based on your preferences.",
+      },
+      {
+        type: "cta",
+        text: "View our full charter fleet with transparent pricing — day rates, week rates and availability for Ibiza and Mallorca.",
+        href: "/fleet",
+        label: "View Charter Pricing & Fleet",
       },
     ],
   },

@@ -153,6 +153,69 @@ export default function Home() {
         </div>
       </section>
 
+      {/* BLOG TEASER */}
+      <section className="py-16 md:py-32 px-6 md:px-10 border-t border-[#0A0A0A]/8">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-16 gap-6">
+            <div>
+              <p className="text-[10px] uppercase tracking-[0.25em] text-[#C9A96E] mb-6">Insights</p>
+              <h2 className="text-3xl md:text-5xl text-[#0A0A0A]" style={{ fontFamily: "var(--font-playfair)", fontWeight: 400 }}>
+                Expert Tips & Guides
+              </h2>
+              <p className="text-sm text-[#0A0A0A]/50 mt-4 max-w-md leading-relaxed">
+                Read our luxury travel blog for yacht charter tips, villa guides and Mediterranean recommendations.
+              </p>
+            </div>
+            <a
+              href="/blog"
+              className="text-[11px] uppercase tracking-[0.1em] border border-[#0A0A0A]/30 text-[#0A0A0A] px-8 py-3 hover:bg-[#0A0A0A] hover:text-white transition-all duration-300 self-start md:self-auto shrink-0"
+            >
+              Read Blog
+            </a>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#0A0A0A]/8">
+            {[
+              {
+                category: "Yacht Charters",
+                title: "Best Time for Yacht Charters in Ibiza",
+                excerpt: "Season guide: when to book, what conditions to expect, and the months even regulars keep to themselves.",
+                href: "/blog/best-time-yacht-charter-ibiza",
+                date: "April 2024",
+              },
+              {
+                category: "Guides",
+                title: "Formentera Day Trip from Ibiza – Complete Itinerary",
+                excerpt: "Hour-by-hour guide to the perfect Formentera day — Illa Espalmador, lunch, sunset sailing and how to arrive before the crowds.",
+                href: "/blog/formentera-day-trip-ibiza",
+                date: "April 2024",
+              },
+              {
+                category: "Yacht Charters",
+                title: "Private Yacht Charter Pricing Guide",
+                excerpt: "A transparent breakdown of day and week charter costs — what's included, what's extra, and how to budget properly.",
+                href: "/blog/private-yacht-charter-pricing-guide",
+                date: "April 2024",
+              },
+            ].map((post) => (
+              <a
+                key={post.href}
+                href={post.href}
+                className="group block bg-white p-8 md:p-10 hover:bg-[#F5F2EB] transition-colors duration-300"
+              >
+                <p className="text-[9px] uppercase tracking-[0.2em] text-[#C9A96E] mb-4">{post.category}</p>
+                <h3 className="text-lg mb-3 text-[#0A0A0A] leading-snug" style={{ fontFamily: "var(--font-playfair)", fontWeight: 400 }}>
+                  {post.title}
+                </h3>
+                <p className="text-sm text-[#0A0A0A]/50 leading-relaxed mb-6">{post.excerpt}</p>
+                <span className="text-[10px] uppercase tracking-[0.15em] text-[#C9A96E] group-hover:tracking-[0.2em] transition-all duration-300">
+                  Read Article →
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* TESTIMONIALS */}
       <Testimonials />
 
