@@ -103,7 +103,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                   { href: "/fleet/all", label: "Full Fleet" },
                   { href: "/villas", label: "Villas" },
                   { href: "/services", label: "Services" },
-                  { href: "/blog", label: "Blog" },
                 ].map(({ href, label }) => (
                   <a key={href} href={href} className="text-xs uppercase tracking-[0.1em] text-white/50 hover:text-white transition-colors duration-300">
                     {label}

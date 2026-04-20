@@ -45,7 +45,7 @@ export default function HeroVideo() {
           className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl text-white mb-6 animate-fade-up-delay"
           style={{ fontFamily: "var(--font-playfair)", fontWeight: 400, letterSpacing: "0.02em" }}
         >
-          Luxury Yacht Charters & Private Villas in Ibiza, Mallorca & Formentera
+          Luxury Made Simple
         </h1>
         <p className="text-base md:text-lg text-white/60 max-w-md mb-10 font-light animate-fade-up-delay-2">
           Private yacht charters and concierge across the Mediterranean.
