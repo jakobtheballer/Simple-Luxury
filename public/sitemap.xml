@@ -215,6 +215,14 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- FAQ -->
+  <url>
+    <loc>https://simpleluxuryservice.de/faq</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Legal -->
   <url>
     <loc>https://simpleluxuryservice.de/impressum</loc>
